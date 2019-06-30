@@ -4,7 +4,6 @@ import Button from "../common/Button"
 import { Link } from "gatsby"
 
 const Wrapper = styled.div`
-  margin: 6rem 1.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -12,7 +11,6 @@ const Wrapper = styled.div`
   font-family: LabGrotesqueMono;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    margin: 6rem 3rem;
   }
 `
 
