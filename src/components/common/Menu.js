@@ -61,8 +61,8 @@ const Navigation = styled.div`
     display: block;
     visibility: hidden;
     @media screen and (min-width: 900px) {
-      // padding: 80px 90px;
-      display: inline-block;
+      padding: 80px 90px;
+      display: block;
     }
     &:after {
       content: "/";
@@ -152,9 +152,15 @@ class Menu extends Component {
         </NavMenu>
         <NavigationContainer className={this.state.active ? "is-open" : ""}>
           <Navigation>
-            <Link to="/a">Home</Link>
-            <Link to="/b">Project</Link>
-            <Link to="/x">Blog</Link>
+            <Link to="/" onClick={this.hamburger}>
+              Home
+            </Link>
+            <Link to="/projects" onClick={this.hamburger}>
+              Project
+            </Link>
+            <Link to="/blog" onClick={this.hamburger}>
+              Blog
+            </Link>
           </Navigation>
         </NavigationContainer>
       </>
