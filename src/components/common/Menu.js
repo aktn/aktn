@@ -12,9 +12,11 @@ const NavMenu = styled.button`
 
 const NavigationContainer = styled.div`
   min-height: 100vh;
-  position: relative;
+  min-width: 100vw;
+  position: absolute;
   overflow: hidden;
   padding-top: 150px;
+  z-index: 3;
   &:after {
     background-color: #232323;
     content: "";
@@ -59,8 +61,8 @@ const Navigation = styled.div`
     display: block;
     visibility: hidden;
     @media screen and (min-width: 900px) {
-      padding: 80px 90px;
-      display: block;
+      // padding: 80px 90px;
+      display: inline-block;
     }
     &:after {
       content: "/";
@@ -148,7 +150,6 @@ class Menu extends Component {
             <span className="bar"></span>
           </Hamburger>
         </NavMenu>
-
         <NavigationContainer className={this.state.active ? "is-open" : ""}>
           <Navigation>
             <Link to="/a">Home</Link>

@@ -9,12 +9,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin-top: 250px;
+  margin-top: 200px;
 `
 const Name = styled.p`
   font-size: 8em;
   position: absolute;
-  top: 188px;
+  top: 221px;
   padding-right: 400px;
   z-index: 2;
 `

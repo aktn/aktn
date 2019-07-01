@@ -23,6 +23,7 @@ const Project = styled.li`
   list-style: none;
   width: 100%;
   margin-bottom: 5rem;
+  z-index: 4;
   @media screen and (min-width: 768px) {
     margin-bottom: 2rem;
     flex: 0 0 50%;
@@ -69,6 +70,7 @@ const ProjectCover = styled.div`
     object-fit: cover !important;
     height: 100%; 
   }
+  
 
 `
 
@@ -76,12 +78,16 @@ const ProjectTitle = styled.span`
   overflow: hidden;
   display: inline-block;
   margin-bottom: -27px;
+
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
+    top: 0;
+    right: 0;
+    z-index: -99;
   }
 `
 

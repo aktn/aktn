@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Button from "../common/Button"
-import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,13 +19,14 @@ const LeftColumn = styled.div`
 `
 
 const Description = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   border-right: 0px;
   @media screen and (min-width: 768px) {
     border-right: 1px solid;
     padding-right: 10px;
+    font-size: 18px;
   }
 `
 
@@ -36,7 +36,8 @@ const Links = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 50px 15px;
+
+  margin: 0px 10px;
   a {
     transition: 0.4s;
   }
@@ -48,6 +49,8 @@ const Links = styled.div`
 `
 const ExternalLink = styled.div`
   margin-right: 10px;
+  max-width: 50px;
+
   @media screen and (min-width: 768px) {
     flex-direction: column;
     margin: 14px 0;
