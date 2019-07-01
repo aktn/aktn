@@ -5,13 +5,9 @@ import ProjectImages from "../components/project/ProjectImages"
 import styled from "styled-components"
 
 const Container = styled.div`
-  margin: 6rem 1.5rem;
   display: flex;
   flex-direction: column;
   background-color: #f7f7f7;
-  @media screen and (min-width: 768px) {
-    margin: 6rem 3rem;
-  }
 `
 
 const ProjectTemplate = ({ data }) => {

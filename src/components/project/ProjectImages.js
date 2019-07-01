@@ -7,17 +7,17 @@ const Images = styled.div`
 `
 
 const Image = styled.div`
-  padding: 30px 50px;
+  padding: 30px 0px;
   object-fit: cover !important;
   width: 100%;
   height: 100%;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  @media screen and (min-width: 768px) {
-    width: 60%;
-    height: 60%;
-  }
+  //   @media screen and (min-width: 768px) {
+  //     width: 60%;
+  //     height: 60%;
+  //   }
 `
 
 const ProjectImages = props => (

@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "../common/Button"
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,8 +7,10 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   background-color: #f7f7f7;
   font-family: LabGrotesqueMono;
+  margin: 1rem 0.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    margin: 3rem 3.5rem;
   }
 `
 
@@ -19,45 +20,64 @@ const LeftColumn = styled.div`
 `
 
 const Description = styled.div`
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 55px;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  color: #888;
   font-weight: 400;
   line-height: 1.5;
   border-right: 0px;
+
   @media screen and (min-width: 768px) {
-    border-right: 1px solid;
     padding-right: 10px;
-    font-size: 18px;
+    font-size: 20px;
   }
 `
 
-const Links = styled.div`
+const Links = styled.ul`
   flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0px 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style-type: none;
+  margin-left: 1rem;
   a {
     transition: 0.4s;
   }
+  span {
+    padding-bottom: 20px;
+    color: #000;
+  }
   @media screen and (min-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: 200px;
+    margin-top: 50px;
   }
 `
-const ExternalLink = styled.div`
-  margin-right: 10px;
-  max-width: 50px;
-
+const ExternalLink = styled.li`
+  max-width: 250px;
+  cursor: pointer;
+  a,
+  a:link,
+  a:visited,
+  a:focus,
+  a:hover,
+  a:active {
+    color: #888;
+    text-decoration: none;
+  }
+  z-index: 10;
   @media screen and (min-width: 768px) {
-    flex-direction: column;
-    margin: 14px 0;
+    margin: 5px 0;
   }
 `
 
-const Title = styled.h3``
+const Title = styled.h3`
+  font-size: 60px;
+  color: #000;
+  line-height: 60px;
+`
 
 const ProjectDetails = props => {
   return (
@@ -71,11 +91,20 @@ const ProjectDetails = props => {
         />
       </LeftColumn>
       <Links>
+        <span>Links</span>
         <ExternalLink>
-          {props.git && <Button href={props.git}>Source Code</Button>}
+          {props.git && (
+            <a href={"props.git"} target="_blank">
+              Source Code
+            </a>
+          )}
         </ExternalLink>
         <ExternalLink>
-          {props.url && <Button href={props.url}>Link</Button>}
+          {props.url && (
+            <a href={"props.url"} target="_blank">
+              URL
+            </a>
+          )}
         </ExternalLink>
       </Links>
     </Wrapper>

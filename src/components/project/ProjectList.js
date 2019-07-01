@@ -11,7 +11,6 @@ const Wrapper = styled.ul`
   width: 100%;
   margin: 7rem 0 0;
   padding: 0rem 1rem;
-
   @media screen and (min-width: 768px) {
     flex-flow: column;
     min-height: calc(100vh - 5rem);
@@ -24,39 +23,38 @@ const Project = styled.li`
   list-style: none;
   width: 100%;
   margin-bottom: 5rem;
-  z-index: 4;
-
+  z-index: 10;
   @media screen and (min-width: 768px) {
     margin-bottom: 2rem;
     flex: 0 0 50%;
+    z-index: 20;
   }
 `
 
 const ProjectCover = styled.div`
   position: relative;
- 
-@media screen and (min-width: 768px) {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  z-index: -10;
-  visibility: hidden;
-  .gatsby-image-wrapper {
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -10;
     visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s, visibility 0.4s;
-  }
-  div {
-    object-fit: cover !important;
-    height: 100%; 
+    .gatsby-image-wrapper {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0.4s;
+    }
+    div {
+      object-fit: cover !important;
+      height: 100%;
+    }
   }
 `
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
-
   &:hover .gatsby-image-wrapper {
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
@@ -79,11 +77,10 @@ const ProjectLink = styled(Link)`
 const ProjectTitle = styled.span`
   overflow: hidden;
   display: inline-block;
-  margin-bottom: -27px;
+  margin-bottom: -23px;
   &:hover {
     visibility: hidden;
   }
-
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;

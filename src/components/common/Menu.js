@@ -16,7 +16,7 @@ const NavigationContainer = styled.div`
   position: absolute;
   overflow: hidden;
   padding-top: 150px;
-  z-index: 3;
+  z-index: 15;
   &:after {
     background-color: #232323;
     content: "";
@@ -70,7 +70,7 @@ const Navigation = styled.div`
       margin-right: 1vw;
     }
     &:hover {
-      color: red;
+      color: #91faef;
     }
   }
 `
@@ -84,6 +84,7 @@ const Hamburger = styled.div`
   margin: 10px;
   right: 0;
   top: 0;
+  padding-top: 5px;
   span {
     display: block;
     width: 2.8em;
@@ -127,9 +128,18 @@ const Hamburger = styled.div`
   }
 `
 
+const pStyle = {
+  fontSize: "15px",
+  textAlign: "center",
+  height: "100%",
+  overflow: "hidden",
+  margin: 0,
+}
+
 class Menu extends Component {
   state = {
     active: false,
+    zIndex: 15,
   }
 
   hamburger = () => {
@@ -139,7 +149,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <>
+      <div style={pStyle}>
         <NavMenu>
           <Hamburger
             onClick={this.hamburger}
@@ -150,7 +160,10 @@ class Menu extends Component {
             <span className="bar"></span>
           </Hamburger>
         </NavMenu>
-        <NavigationContainer className={this.state.active ? "is-open" : ""}>
+        <NavigationContainer
+          className={this.state.active ? "is-open" : ""}
+          style={{ zIndex: this.state.active ? 30 : 15 }}
+        >
           <Navigation>
             <Link to="/" onClick={this.hamburger}>
               Home
@@ -163,7 +176,7 @@ class Menu extends Component {
             </Link>
           </Navigation>
         </NavigationContainer>
-      </>
+      </div>
     )
   }
 }
