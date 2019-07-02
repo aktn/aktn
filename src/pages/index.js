@@ -39,16 +39,19 @@ const About = styled.div`
   max-width: 400px;
   min-width: 300px;
   width: 95%;
+  font-size: 14px;
+  color: #fff;
   box-sizing: border-box;
   text-align: left;
   padding: 20px;
-  background-color: #ddd;
+  background-color: #3c7368;
   max-height: 500px;
   min-height: 400px;
   @media screen and (min-width: 800px) {
     min-width: 400px;
     //  max-width: 300px;
     width: 100%;
+    font-size: 17px;
   }
 `
 const Picture = styled(Img)`
