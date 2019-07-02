@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
+import "./layout.css"
 import { StaticQuery, graphql } from "gatsby"
 import Menu from "../components/common/Menu"
-import "./layout.css"
 
 const Layout = ({ children, location }) => (
   <StaticQuery

@@ -78,9 +78,6 @@ const ProjectTitle = styled.span`
   overflow: hidden;
   display: inline-block;
   margin-bottom: -23px;
-  &:hover {
-    visibility: hidden;
-  }
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;
@@ -98,7 +95,6 @@ const Title = styled.h3`
   font-family: LabGrotesqueMono;
   font-weight: 400;
   color: #232323;
-
   @media screen and (min-width: 768px) {
     font-size: 28px;
     line-height: 1.5;

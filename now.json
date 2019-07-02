@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "gatsby",
+  "name": "portfolio",
   "builds": [
     {
       "src": "package.json",
