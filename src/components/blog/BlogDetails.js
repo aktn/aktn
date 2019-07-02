@@ -6,10 +6,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   font-family: LabGrotesqueMono;
-  margin: 1.5rem 1rem;
-  @media screen and (min-width: 768px) {
-    margin: 3rem 3.5rem;
-  }
 `
 
 const Content = styled.div`
@@ -19,7 +15,6 @@ const Content = styled.div`
   line-height: 55px;
   letter-spacing: 0.1em;
   line-height: 1.5;
-
   @media screen and (min-width: 768px) {
     padding-right: 10px;
     font-size: 20px;

@@ -57,29 +57,29 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       `
-    ).then(result => {
-      if (result.errors) {
-        console.log("Error getting data", result.errors)
-      }
+    )
+      .then(result => {
+        if (result.errors) {
+          console.log("Error getting data", result.errors)
+        }
 
-      const blogTemplate = path.resolve("./src/templates/blog.js")
+        const blogTemplate = path.resolve("./src/templates/blog.js")
 
-      result.data.allContentfulBlog.edges.forEach(edge => {
-        createPage({
-          path: `/blogs/${edge.node.slug}/`,
-          component: slash(blogTemplate),
-          context: {
-            slug: edge.node.slug,
-            id: edge.node.id,
-          },
+        result.data.allContentfulBlog.edges.forEach(edge => {
+          createPage({
+            path: `/blogs/${edge.node.slug}/`,
+            component: slash(blogTemplate),
+            context: {
+              slug: edge.node.slug,
+              id: edge.node.id,
+            },
+          })
         })
+        resolve()
       })
-      resolve()
-    })
-
-    // .catch(error => {
-    //   console.log("Error retrieving contentful data", error)
-    // })
+      .catch(error => {
+        console.log("Error retrieving contentful data", error)
+      })
   })
 
   return Promise.all([loadProjects, loadBlogs])

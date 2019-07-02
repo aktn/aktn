@@ -96,7 +96,7 @@ const Title = styled.h3`
   font-weight: 400;
   color: #232323;
   @media screen and (min-width: 768px) {
-    font-size: 28px;
+    font-size: 2rem;
     line-height: 1.5;
     display: inline-block;
     position: relative;
