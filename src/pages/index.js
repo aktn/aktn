@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
-import Link from "gatsby-link"
 
 const Container = styled.div`
   display: flex;
@@ -10,49 +9,68 @@ const Container = styled.div`
   align-items: center;
   justify-content: start;
   margin-top: 200px;
+  margin-bottom: 100px;
 `
 const Name = styled.p`
-  font-size: 8em;
+  font-size: 6em;
   position: absolute;
-  top: 221px;
-  padding-right: 400px;
+  top: 238px;
+  //padding-right: 75px;
   z-index: 2;
+  @media screen and (min-width: 800px) {
+    top: 221px;
+    font-size: 8em;
+    padding-right: 400px;
+  }
 `
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
 `
 const About = styled.div`
-  flex: 1;
-  min-width: 400px;
-  max-width: 500px;
-  min-height: 435px;
-  max-height: 600px;
-  height: 100%;
-  width: 100%;
-  background-color: cyan;
-  padding: 15px;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-size: 17px;
-  line-height: 30px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 600;
-  color: #272727;
-  background: #94d1d9;
+  display: inline-block;
+  max-width: 400px;
+  min-width: 300px;
+  width: 95%;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 20px;
+  background-color: #ddd;
+  max-height: 500px;
+  min-height: 400px;
+  @media screen and (min-width: 800px) {
+    min-width: 400px;
+    //  max-width: 300px;
+    width: 100%;
+  }
 `
 const Picture = styled(Img)`
-  flex: 1;
-  min-width: 400px;
+  display: inline-block;
+  max-width: 400px;
+  min-width: 300px;
   min-height: 400px;
+  max-height: 500px;
   height: 100%;
-  width: 100%;
-  background-color: tomato;
-  overflow: hidden;
+  width: 95%;
+  text-align: left;
+  padding: 10px;
+  background-color: #ddd;
+  img {
+  }
+  @media screen and (min-width: 800px) {
+    //max-width: 300px;
+    width: 100%;
+    min-width: 400px;
+  }
 `
+
 const IndexPage = ({ data }) => {
   const { me, description } = data.contentfulAboutMe
 

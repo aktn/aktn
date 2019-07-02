@@ -8,6 +8,7 @@ const NavMenu = styled.button`
   z-index: 1;
   border: 0;
   outline: none !important;
+  background-color: #fff;
 `
 
 const NavigationContainer = styled.div`
@@ -28,6 +29,7 @@ const NavigationContainer = styled.div`
     transform-origin: right top;
     transform: translateZ(0) rotate(-90deg);
     z-index: -1;
+    transition-delay: 3s;
     transition: transform 0.45s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
   &.is-open {

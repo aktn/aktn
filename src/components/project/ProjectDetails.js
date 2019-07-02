@@ -67,7 +67,7 @@ const ExternalLink = styled.li`
     color: #888;
     text-decoration: none;
   }
-  z-index: 10;
+  z-index: 15;
   @media screen and (min-width: 768px) {
     margin: 5px 0;
   }

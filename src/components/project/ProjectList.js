@@ -23,7 +23,7 @@ const Project = styled.li`
   list-style: none;
   width: 100%;
   margin-bottom: 5rem;
-  z-index: 10;
+  z-index: 20;
   @media screen and (min-width: 768px) {
     margin-bottom: 2rem;
     flex: 0 0 50%;
