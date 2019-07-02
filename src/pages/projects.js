@@ -1,11 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
 import ProjectList from "../components/project/ProjectList"
+import Helmet from "react-helmet"
 
 const ProjectPage = ({ data }) => {
   const projects = data.allContentfulProject.edges
   return (
     <>
+      <Helmet>
+        <title>Selected Projects</title>
+      </Helmet>
       <ProjectList projects={projects}></ProjectList>
     </>
   )

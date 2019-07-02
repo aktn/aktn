@@ -1,12 +1,15 @@
 import React from "react"
-import styled from "styled-components"
 import BlogList from "../components/blog/BlogList"
 import { graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 const BlogPage = ({ data }) => {
   const blogs = data.allContentfulBlog.edges
   return (
     <>
+      <Helmet>
+        <title>Blogs</title>
+      </Helmet>
       <BlogList blogs={blogs}></BlogList>
     </>
   )

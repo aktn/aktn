@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 const Container = styled.div`
   display: flex;
@@ -78,17 +79,22 @@ const IndexPage = ({ data }) => {
   const { me, description } = data.contentfulAboutMe
 
   return (
-    <Container>
-      <Name>Aung.</Name>
-      <Wrapper>
-        <Picture fluid={me.fluid} alt={"me"} />
-        <About
-          dangerouslySetInnerHTML={{
-            __html: description.childMarkdownRemark.html,
-          }}
-        />
-      </Wrapper>
-    </Container>
+    <>
+      <Helmet>
+        <title>Hello ;)</title>
+      </Helmet>
+      <Container>
+        <Name>Aung.</Name>
+        <Wrapper>
+          <Picture fluid={me.fluid} alt={"me"} />
+          <About
+            dangerouslySetInnerHTML={{
+              __html: description.childMarkdownRemark.html,
+            }}
+          />
+        </Wrapper>
+      </Container>
+    </>
   )
 }
 

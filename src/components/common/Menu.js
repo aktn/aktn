@@ -173,7 +173,7 @@ class Menu extends Component {
             <Link to="/projects" onClick={this.hamburger}>
               Project
             </Link>
-            <Link to="/blog" onClick={this.hamburger}>
+            <Link to="/blogs" onClick={this.hamburger}>
               Blog
             </Link>
           </Navigation>
