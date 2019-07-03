@@ -48,11 +48,11 @@ const Links = styled.ul`
   }
   span {
     padding-bottom: 20px;
-    color: #000;
+    color: #7d5807;
   }
   @media screen and (min-width: 768px) {
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
   }
 `
 const ExternalLink = styled.li`
@@ -64,7 +64,7 @@ const ExternalLink = styled.li`
   a:focus,
   a:hover,
   a:active {
-    color: #888;
+    color: #232323;
     text-decoration: none;
   }
   z-index: 15;
@@ -91,7 +91,7 @@ const ProjectDetails = props => {
         />
       </LeftColumn>
       <Links>
-        <span>Links</span>
+        {/* <span>Links</span> */}
         <ExternalLink>
           {props.git && (
             <a href={"props.git"} target="_blank">

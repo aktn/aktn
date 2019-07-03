@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import ProjectDetails from "../components/project/ProjectDetails"
 import ProjectImages from "../components/project/ProjectImages"
 import styled from "styled-components"
+import Helmet from "react-helmet"
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,9 @@ const ProjectTemplate = ({ data }) => {
   const { title, date, url, git, about, gallery } = data.contentfulProject
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Container>
         <ProjectDetails
           title={title}

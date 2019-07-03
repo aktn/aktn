@@ -16,7 +16,6 @@ const Name = styled.p`
   font-size: 6em;
   position: absolute;
   top: 238px;
-  //padding-right: 75px;
   z-index: 2;
   @media screen and (min-width: 800px) {
     top: 221px;
@@ -40,7 +39,7 @@ const About = styled.div`
   max-width: 400px;
   min-width: 300px;
   width: 95%;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   box-sizing: border-box;
   text-align: left;

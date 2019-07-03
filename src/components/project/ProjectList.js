@@ -55,6 +55,7 @@ const ProjectCover = styled.div`
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
+  width: 100px;
   &:hover .gatsby-image-wrapper {
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {

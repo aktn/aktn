@@ -67,9 +67,6 @@ const Navigation = styled.div`
       display: block;
     }
     &:after {
-      content: "/";
-      margin-left: 6vw;
-      margin-right: 1vw;
     }
     &:hover {
       color: #91faef;
