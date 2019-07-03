@@ -94,7 +94,7 @@ const ProjectDetails = props => {
         {/* <span>Links</span> */}
         <ExternalLink>
           {props.git && (
-            <a href={"props.git"} target="_blank">
+            <a href={props.git} target="_blank">
               Source Code
             </a>
           )}

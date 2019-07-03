@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 const Images = styled.div`
   flex: 1;
+  background-color: #fff;
 `
 
 const Image = styled.div`
@@ -14,10 +15,11 @@ const Image = styled.div`
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  //   @media screen and (min-width: 768px) {
-  //     width: 60%;
-  //     height: 60%;
-  //   }
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    height: 50%;
+  }
 `
 
 const ProjectImages = props => (
