@@ -11,6 +11,32 @@ const NavMenu = styled.button`
   background-color: #fff;
 `
 
+const Navigation = styled.div`
+  a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: 0.2s ease-out;
+    transform-origin: right center;
+    opacity: 0;
+    transform: translate3d(100px, 100px, 0) skewY(-10deg);
+    padding: 50px 20px;
+    display: block;
+    visibility: hidden;
+    @media screen and (min-width: 900px) {
+      padding: 80px 90px;
+      display: block;
+    }
+    &:after {
+    }
+    &:hover {
+      color: #91faef;
+    }
+  }
+`
+
 const NavigationContainer = styled.div`
   min-height: 100vh;
   min-width: 100vw;
@@ -48,31 +74,7 @@ const NavigationContainer = styled.div`
   }
 `
 
-const Navigation = styled.div`
-  a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: 500;
-    transition: 0.2s ease-out;
-    transform-origin: right center;
-    opacity: 0;
-    transform: translate3d(100px, 100px, 0) skewY(-10deg);
-    padding: 50px 20px;
-    display: block;
-    visibility: hidden;
-    @media screen and (min-width: 900px) {
-      padding: 80px 90px;
-      display: block;
-    }
-    &:after {
-    }
-    &:hover {
-      color: #91faef;
-    }
-  }
-`
+
 
 const Hamburger = styled.div`
   -webkit-transition: margin 600ms;

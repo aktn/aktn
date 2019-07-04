@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
+import Social from "../components/common/Social"
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +11,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: start;
   margin-top: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 100px;
+  }
 `
 const Name = styled.p`
   font-size: 6em;
@@ -92,6 +96,7 @@ const IndexPage = ({ data }) => {
             }}
           />
         </Wrapper>
+        <Social></Social>
       </Container>
     </>
   )

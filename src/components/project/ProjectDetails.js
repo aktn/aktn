@@ -94,14 +94,14 @@ const ProjectDetails = props => {
         {/* <span>Links</span> */}
         <ExternalLink>
           {props.git && (
-            <a href={props.git} target="_blank">
+            <a href={props.git} target="_blank" rel="noopener noreferrer">
               Source Code
             </a>
           )}
         </ExternalLink>
         <ExternalLink>
           {props.url && (
-            <a href={"props.url"} target="_blank">
+            <a href={props.url} target="_blank" rel="noopener noreferrer">
               URL
             </a>
           )}
