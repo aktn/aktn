@@ -26,13 +26,18 @@ exports.createPages = ({ graphql, actions }) => {
 
         const projectTemplate = path.resolve("./src/templates/project.js")
 
-        result.data.allContentfulProject.edges.forEach(edge => {
+        const projects = result.data.allContentfulProject.edges
+        projects.forEach((edge, i) => {
+          const prev = i === 0 ? null : projects[i - 1].node
+          const next = i === projects.length - 1 ? null : projects[i + 1].node
           createPage({
             path: `/projects/${edge.node.slug}/`,
             component: slash(projectTemplate),
             context: {
               slug: edge.node.slug,
               id: edge.node.id,
+              prev,
+              next,
             },
           })
         })

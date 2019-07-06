@@ -4,6 +4,7 @@ import ProjectDetails from "../components/project/ProjectDetails"
 import ProjectImages from "../components/project/ProjectImages"
 import styled from "styled-components"
 import Helmet from "react-helmet"
+import NavLinks from "../components/common/NavLinks"
 
 const Container = styled.div`
   display: flex;
@@ -11,14 +12,17 @@ const Container = styled.div`
   background-color: #f7f7f7;
 `
 
-const ProjectTemplate = ({ data }) => {
+const ProjectTemplate = ({ data, pageContext }) => {
   const { title, date, url, git, about, gallery } = data.contentfulProject
+  const previous = pageContext.prev
+  const next = pageContext.next
   return (
     <>
       <Helmet>
         <title>{title}</title>
       </Helmet>
       <Container>
+        <NavLinks previous={previous} next={next} />
         <ProjectDetails
           title={title}
           description={about}
