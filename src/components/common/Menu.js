@@ -42,7 +42,7 @@ const NavigationContainer = styled.div`
   min-width: 100vw;
   position: absolute;
   overflow: hidden;
-  padding-top: 150px;
+  padding-top: 70px;
   z-index: 15;
   &:after {
     background-color: #232323;
@@ -73,8 +73,6 @@ const NavigationContainer = styled.div`
     }
   }
 `
-
-
 
 const Hamburger = styled.div`
   -webkit-transition: margin 600ms;

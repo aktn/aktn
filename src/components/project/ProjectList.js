@@ -78,7 +78,7 @@ const ProjectLink = styled(Link)`
 const ProjectTitle = styled.span`
   overflow: hidden;
   display: inline-block;
-  margin-bottom: -26px;
+  margin-bottom: -23px;
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;

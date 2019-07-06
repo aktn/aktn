@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin-left: 1rem;
+  margin: 0 1rem;
   padding-top: 3rem;
   font-family: LabGrotesqueMono;
   a,

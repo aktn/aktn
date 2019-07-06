@@ -22,8 +22,8 @@ const Name = styled.p`
   top: 238px;
   z-index: 2;
   @media screen and (min-width: 800px) {
-    top: 221px;
-    font-size: 8em;
+    top: 231px;
+    font-size: 7em;
     padding-right: 400px;
   }
 `
@@ -55,7 +55,7 @@ const About = styled.div`
     min-width: 400px;
     //  max-width: 300px;
     width: 100%;
-    font-size: 17px;
+    font-size: 16px;
   }
 `
 const Picture = styled(Img)`

@@ -4,7 +4,7 @@ import styled from "styled-components"
 const ExternalLinks = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 100px 0;
+  margin: 50px 0;
   justify-content: center;
   align-items: center;
   a {
