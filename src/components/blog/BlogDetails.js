@@ -14,6 +14,16 @@ const Content = styled.div`
   line-height: 55px;
   letter-spacing: 0.1em;
   line-height: 1.5;
+  h3 {
+    font-size: 15px;
+  }
+  img {
+    width: 100%;
+  }
+  .gatsby-highlight,
+  .language-text {
+    width: 90vw;
+  }
   @media screen and (min-width: 768px) {
     padding-right: 10px;
     font-size: 16px;
