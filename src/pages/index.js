@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
   @media screen and (min-width: 800px) {
     flex-direction: row;
   }
@@ -53,7 +52,6 @@ const About = styled.div`
   min-height: 400px;
   @media screen and (min-width: 800px) {
     min-width: 400px;
-    //  max-width: 300px;
     width: 100%;
     font-size: 16px;
   }
@@ -72,7 +70,6 @@ const Picture = styled(Img)`
   img {
   }
   @media screen and (min-width: 800px) {
-    //max-width: 300px;
     width: 100%;
     min-width: 400px;
   }

@@ -36,6 +36,7 @@ const Contents = styled(Link)`
   min-width: 100vw - 20rem;
   width: 100%:
   justify-content: flex-start;
+  font-size: 15px;
   @media screen and (min-width: 768px) {
     flex-flow: row;
     max-width: 800px;
@@ -56,13 +57,13 @@ const Date = styled.p`
 
 const Title = styled.h3`
   flex: 2;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   line-height: 2rem;
   font-weight: 400;
   color: #232323;
   z-index: 36;
   cursor: pointer;
-  padding-right: 12px;
+  padding: 0 12px;
   @media screen and (min-width: 768px) {
     line-height: 1rem;
     display: inline-block;
@@ -78,7 +79,7 @@ const WorkInProgress = styled.p`
 const BlogList = props => {
   return (
     <Wrapper>
-      <WorkInProgress>
+      {/* <WorkInProgress>
         This is the place, where I am sharing my obsession of Internet related
         things{" "}
         <span aria-label="emoji" role="img">
@@ -88,15 +89,13 @@ const BlogList = props => {
         <span aria-label="emoji" role="img">
           🤗
         </span>
-      </WorkInProgress>
-      {/* {props.blogs.map(({ node: blog }, index) => (
+      </WorkInProgress> */}
+      {props.blogs.map(({ node: blog }, index) => (
         <Contents key={blog.id} to={`/blogs/${blog.slug}/`}>
-          <Title>
-            {index + 1}. {blog.title}
-          </Title>
+          {index + 1}. <Title>{blog.title}</Title>
           <Date>{blog.date}</Date>
         </Contents>
-      ))} */}
+      ))}
     </Wrapper>
   )
 }

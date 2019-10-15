@@ -9,7 +9,6 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  font-size: 18px;
   font-weight: 200;
   color: #212121;
   line-height: 55px;
@@ -17,7 +16,7 @@ const Content = styled.div`
   line-height: 1.5;
   @media screen and (min-width: 768px) {
     padding-right: 10px;
-    font-size: 20px;
+    font-size: 16px;
   }
 `
 

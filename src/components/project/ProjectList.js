@@ -33,6 +33,11 @@ const Project = styled.li`
 
 const ProjectCover = styled.div`
   position: relative;
+
+  .gatsby-image-wrapper {
+    max-height: 300px;
+    object-fit: contain;
+  }
   @media screen and (min-width: 768px) {
     position: fixed;
     top: 0;
@@ -42,6 +47,7 @@ const ProjectCover = styled.div`
     z-index: -10;
     visibility: hidden;
     .gatsby-image-wrapper {
+      max-height: none;
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.5s, visibility 0.4s;
@@ -97,7 +103,7 @@ const Title = styled.h3`
   font-weight: 400;
   color: #232323;
   @media screen and (min-width: 768px) {
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 1.5;
     display: inline-block;
     position: relative;

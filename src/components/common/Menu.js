@@ -44,6 +44,7 @@ const NavigationContainer = styled.div`
   overflow: hidden;
   padding-top: 70px;
   z-index: 15;
+  z-index: ${props => (props.activeStatus ? "30" : "30")};
   &:after {
     background-color: #232323;
     content: "";
@@ -71,6 +72,9 @@ const NavigationContainer = styled.div`
       transition: transform 0.6s cubic-bezier(0.4, 0, 0, 1);
       transition-delay: 0s;
     }
+  }
+  @media only screen and (min-width: 768px) {
+    z-index: ${props => (props.activeStatus ? "30" : "15")};
   }
 `
 
@@ -161,7 +165,8 @@ class Menu extends Component {
         </NavMenu>
         <NavigationContainer
           className={this.state.active ? "is-open" : ""}
-          style={{ zIndex: this.state.active ? 30 : 15 }}
+          // style={{ zIndex: this.state.active ? 30 : 15 }}
+          activeStatus={this.state.active}
         >
           <Navigation>
             <Link to="/" onClick={this.hamburger}>
