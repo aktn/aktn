@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin: 0 1rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   font-family: LabGrotesqueMono;
   a,
   a:link,
@@ -24,12 +24,11 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin-left: 0rem;
-    padding-top: 5rem;
   }
 `
 
 const Contents = styled(Link)`
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
   display: flex;
   max-width: 100vw - 15rem;
@@ -37,6 +36,7 @@ const Contents = styled(Link)`
   width: 100%:
   justify-content: flex-start;
   font-size: 15px;
+  
   @media screen and (min-width: 768px) {
     flex-flow: row;
     max-width: 800px;
@@ -46,7 +46,6 @@ const Contents = styled(Link)`
 
 const Date = styled.p`
   flex: 1;
-  padding-bottom: 2rem;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -63,10 +62,12 @@ const Title = styled.h3`
   color: #232323;
   z-index: 36;
   cursor: pointer;
-  padding: 0 12px;
+  padding: 0;
+  margin: 0;
   @media screen and (min-width: 768px) {
     line-height: 1rem;
     display: inline-block;
+    padding: 0 12px;
   }
 `
 
@@ -74,6 +75,30 @@ const WorkInProgress = styled.p`
   max-width: 500px;
   width: 100%;
   margin-top: 10rem;
+`
+
+const Index = styled.span`
+  display: inline-block;
+  padding-right: 5px;
+  line-height: 2rem;
+  @media screen and (min-width: 768px) {
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0 12px;
+  }
+`
+
+const Section = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+`
+
+const Heading = styled.h3`
+  font-size: 1rem;
+  padding-bottom: 1rem;
 `
 
 const BlogList = props => {
@@ -90,10 +115,14 @@ const BlogList = props => {
           🤗
         </span>
       </WorkInProgress> */}
+      <Heading>Blog</Heading>
       {props.blogs.map(({ node: blog }, index) => (
         <Contents key={blog.id} to={`/blogs/${blog.slug}/`}>
-          {index + 1}. <Title>{blog.title}</Title>
-          <Date>{blog.date}</Date>
+          <Index>{index + 1}.</Index>
+          <Section>
+            <Title>{blog.title}</Title>
+            <Date>{blog.date}</Date>
+          </Section>
         </Contents>
       ))}
     </Wrapper>
