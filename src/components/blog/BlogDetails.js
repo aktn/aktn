@@ -24,6 +24,12 @@ const Content = styled.div`
   .language-text {
     width: 90vw;
   }
+  video {
+    width: 100%;
+  }
+  iframe {
+    margin: 0 0 2rem 0;
+  }
   @media screen and (min-width: 768px) {
     padding-right: 10px;
     font-size: 16px;

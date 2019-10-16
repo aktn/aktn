@@ -5,6 +5,7 @@ import ProjectImages from "../components/project/ProjectImages"
 import styled from "styled-components"
 import Helmet from "react-helmet"
 import NavLinks from "../components/common/NavLinks"
+import ProjectVideo from "../components/project/ProjectVideo"
 
 const Container = styled.div`
   display: flex;
