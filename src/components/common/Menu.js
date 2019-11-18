@@ -43,8 +43,7 @@ const NavigationContainer = styled.div`
   position: absolute;
   overflow: hidden;
   padding-top: 70px;
-  z-index: 15;
-  z-index: ${props => (props.activeStatus ? "30" : "30")};
+  z-index: ${props => (props.activeStatus ? "30" : "15")};
   &:after {
     background-color: #232323;
     content: "";
@@ -56,8 +55,8 @@ const NavigationContainer = styled.div`
     transform-origin: right top;
     transform: translateZ(0) rotate(-90deg);
     z-index: -1;
-    transition-delay: 3s;
-    transition: transform 0.45s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-delay: 0s;
+    transition: transform 0.4s;
   }
   &.is-open {
     ${Navigation} {
@@ -75,6 +74,10 @@ const NavigationContainer = styled.div`
   }
   @media only screen and (min-width: 768px) {
     z-index: ${props => (props.activeStatus ? "30" : "15")};
+    &.is-open {
+      min-height: 100vh;
+      min-width: 100vw;
+    }
   }
 `
 
@@ -176,7 +179,7 @@ class Menu extends Component {
               Projects
             </Link>
             <Link to="/blogs" onClick={this.hamburger}>
-              Blog
+              Blogs
             </Link>
           </Navigation>
         </NavigationContainer>

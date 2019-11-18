@@ -38,7 +38,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/me.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -61,6 +61,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://aungthet.us5.list-manage.com/subscribe/post?u=6590c050e211d0cfe467751f7&amp;id=81cd9ec5a2",
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
