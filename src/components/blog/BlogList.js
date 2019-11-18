@@ -4,12 +4,10 @@ import Link from "gatsby-link"
 
 const Wrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
   padding-top: 1rem;
   font-family: LabGrotesqueMono;
+  width: 80%;
   a,
   a:link,
   a:visited,
@@ -26,104 +24,67 @@ const Wrapper = styled.div`
   }
 `
 
-const Contents = styled(Link)`
+const ContentLayout = styled.div`
   flex-direction: row;
-  flex: 1;
   display: flex;
-  max-width: 100vw - 15rem;
-  min-width: 100vw - 20rem;
-  width: 100%;
+  width: 70%;
   font-size: 0.8rem;
   cursor: pointer;
   z-index: 20;
   margin-bottom: 20px;
+  flex-wrap: wrap;
   @media screen and (min-width: 768px) {
-    flex-flow: row;
-    max-width: 800px;
-    min-width: 700px;
+    flex-direction: row;
   }
 `
 
-const Date = styled.p`
-  flex: 1;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-`
+const Date = styled.p``
 
 const Title = styled.h3`
-  flex: 2;
-  font-size: 0.9rem;
-  line-height: 2rem;
-  color: #232323;
-  z-index: 36;
-  padding: 0 0 5px 0;
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: 1.1px;
-  @media screen and (min-width: 768px) {
-    line-height: 1rem;
-    display: inline-block;
-    padding: 0 12px;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
+  color: #047a87;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.8px;
 `
 
-const Section = styled.div`
-  cursor: pointer;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
+const Card = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  flex: 0 50%;
+  margin-bottom: 50px;
 `
 
 const Heading = styled.h3`
   font-size: 1.3rem;
   padding-bottom: 2rem;
   letter-spacing: 1.1px;
-`
-
-const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  height: 100px;
+  align-items: flex-start;
+  justify-content: flex-start;
 `
 
-const Image = styled.div`
-  padding-bottom: 10px;
-  height: 250px;
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    color: gray;
-  }
-  @media screen and (min-width: 768px) {
-    height: 200px;
-    max-width: 300px;
-  }
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `
 
 const BlogList = props => {
   return (
-    <Wrapper>
-      <Heading>Blog</Heading>
-      {props.blogs.map(({ node: blog }, index) => (
-        <Contents key={blog.id} to={`/blogs/${blog.slug}/`}>
-          <Section>
-            {/* <Content> */}
-            <Title>{blog.title}</Title>
-            {/* </Content> */}
-            <Date>{blog.date}</Date>
-          </Section>
-        </Contents>
-      ))}
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <Heading>Blog</Heading>
+        <ContentLayout>
+          {props.blogs.map(({ node: blog }, index) => (
+            <Card key={blog.id} to={`/blogs/${blog.slug}/`}>
+              <Title>{blog.title}</Title>
+              <Date>{blog.date}</Date>
+            </Card>
+          ))}
+        </ContentLayout>
+      </Wrapper>
+    </Container>
   )
 }
 
