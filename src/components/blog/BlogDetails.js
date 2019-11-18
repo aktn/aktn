@@ -45,6 +45,7 @@ const Input = styled.input`
   background-color: #cce0e0;
   border-bottom: 2px solid #241c15;
   margin: 0;
+  border-color: ${props => (props.error ? "red" : "black")};
 `
 
 const SubscribePanel = styled.div`
@@ -110,22 +111,34 @@ const FormWrapper = styled.div`
     width: 50%;
   }
 `
-
 const BlogDetails = props => {
   const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [loadingStatus, setLoadingStatus] = useState(false)
 
   const handleInputChange = e => {
     setEmail(e.target.value)
   }
 
   const handleSubmit = () => {
+    setLoadingStatus(true)
     addToMailchimp(email)
       .then(data => {
-        console.log(data)
+        setMessage(data)
+        setLoadingStatus(false)
       })
       .catch(err => {
         console.log(err)
       })
+  }
+
+  let buttonContent
+  if (loadingStatus) {
+    buttonContent = "Sending..."
+  } else if (message.result === "success") {
+    buttonContent = "Done"
+  } else {
+    buttonContent = "Submit"
   }
 
   return (
@@ -141,8 +154,9 @@ const BlogDetails = props => {
             <Input
               placeholder="abc@example.com"
               onChange={handleInputChange}
+              error={message.result == "error"}
             ></Input>
-            <SubmitBtn onClick={handleSubmit}>Submit</SubmitBtn>
+            <SubmitBtn onClick={handleSubmit}>{buttonContent}</SubmitBtn>
           </FormWrapper>
         </InputPanel>
         <ContentPanel>Subscribe for new posts</ContentPanel>
