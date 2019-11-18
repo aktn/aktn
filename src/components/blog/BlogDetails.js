@@ -49,13 +49,14 @@ const Input = styled.input`
 
 const SubscribePanel = styled.div`
   width: 100%;
-  height: 200px;
+  height: 300px;
   margin-top: 100px;
   background-color: #fbeeca;
   display: flex;
   flex-direction: column;
   font-family: Cooper, Georgia, Times, Times New Roman, serif;
   @media screen and (min-width: 768px) {
+    height: 200px;
     flex-direction: row;
   }
 `
@@ -86,7 +87,8 @@ const SubmitBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 65px;
+  padding: 5px 50px;
+  font-size: 16px;
   background-color: #e9ebe8;
   color: #241c15;
   cursor: pointer;
@@ -102,8 +104,11 @@ const FormWrapper = styled.div`
   justify-content: space-evenly;
   align-items: space-evenly;
   flex-direction: column;
-  width: 50%;
+  width: 90%;
   height: 100%;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 const BlogDetails = props => {
@@ -133,7 +138,10 @@ const BlogDetails = props => {
       <SubscribePanel>
         <InputPanel>
           <FormWrapper>
-            <Input onChange={handleInputChange}></Input>
+            <Input
+              placeholder="abc@example.com"
+              onChange={handleInputChange}
+            ></Input>
             <SubmitBtn onClick={handleSubmit}>Submit</SubmitBtn>
           </FormWrapper>
         </InputPanel>
