@@ -79,7 +79,7 @@ const Title = styled.h3`
   line-height: 60px;
 `
 
-const ProjectDetails = props => {
+const ProjectDetails = (props, children) => {
   return (
     <Wrapper>
       <LeftColumn>

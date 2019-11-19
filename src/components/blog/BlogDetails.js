@@ -14,11 +14,19 @@ const Content = styled.div`
   line-height: 55px;
   letter-spacing: 0.1em;
   line-height: 1.5;
+  border-bottom: 2px dashed #414141;
   h3 {
     font-size: 15px;
   }
   img {
     width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin: auto;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
   }
   .gatsby-highlight,
   .language-text {
@@ -51,7 +59,7 @@ const Input = styled.input`
 const SubscribePanel = styled.div`
   width: 100%;
   height: 300px;
-  margin-top: 100px;
+  margin-top: 30px;
   background-color: #fbeeca;
   display: flex;
   flex-direction: column;

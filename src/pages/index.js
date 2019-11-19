@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Social from "../components/common/Social"
+import Layout from "./../components/layout"
 
 const Container = styled.div`
   display: flex;
@@ -80,21 +81,23 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Helmet>
-        <title>Hello ;)</title>
-      </Helmet>
-      <Container>
-        <Name>Aung.</Name>
-        <Wrapper>
-          <Picture fluid={me.fluid} alt={"me"} />
-          <About
-            dangerouslySetInnerHTML={{
-              __html: description.childMarkdownRemark.html,
-            }}
-          />
-        </Wrapper>
-        <Social></Social>
-      </Container>
+      <Layout>
+        <Helmet>
+          <title>Hello ;)</title>
+        </Helmet>
+        <Container>
+          <Name>Aung.</Name>
+          <Wrapper>
+            <Picture fluid={me.fluid} alt={"me"} />
+            <About
+              dangerouslySetInnerHTML={{
+                __html: description.childMarkdownRemark.html,
+              }}
+            />
+          </Wrapper>
+          <Social></Social>
+        </Container>
+      </Layout>
     </>
   )
 }
