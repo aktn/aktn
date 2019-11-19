@@ -15,6 +15,12 @@ const Wrapper = styled.ul`
     flex-flow: column;
     min-height: calc(100vh - 5rem);
     margin: 0;
+    width: 80%;
+  }
+  @media screen and (min-width: 1025px) {
+    flex-flow: column;
+    min-height: calc(100vh - 5rem);
+    margin: 0;
     width: 50%;
   }
 `
@@ -61,7 +67,6 @@ const ProjectCover = styled.div`
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
-  width: 100px;
   &:hover .gatsby-image-wrapper {
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
@@ -97,7 +102,7 @@ const ProjectTitle = styled.span`
 `
 
 const Title = styled.h3`
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: LabGrotesqueMono;
   font-weight: 400;
   color: #232323;

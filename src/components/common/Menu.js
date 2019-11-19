@@ -16,7 +16,7 @@ const Navigation = styled.div`
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: 0.2s ease-out;
     transform-origin: right center;
@@ -26,7 +26,7 @@ const Navigation = styled.div`
     display: block;
     visibility: hidden;
     @media screen and (min-width: 900px) {
-      padding: 80px 90px;
+      padding: 50px 90px;
       display: block;
     }
     &:after {
@@ -174,6 +174,9 @@ class Menu extends Component {
           <Navigation>
             <Link to="/" onClick={this.hamburger}>
               Home
+            </Link>
+            <Link to="/aboutMe" onClick={this.hamburger}>
+              Notes
             </Link>
             <Link to="/projects" onClick={this.hamburger}>
               Projects
