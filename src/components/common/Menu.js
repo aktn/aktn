@@ -8,7 +8,7 @@ const NavMenu = styled.button`
   z-index: 1;
   border: 0;
   outline: none !important;
-  background-color: #fff;
+  background-color: #fcfcfc;
 `
 
 const Navigation = styled.div`

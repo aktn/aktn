@@ -28,12 +28,12 @@ const Project = styled.li`
     margin-bottom: 2rem;
     flex: 0 0 50%;
     z-index: 20;
+    width: 40%;
   }
 `
 
 const ProjectCover = styled.div`
   position: relative;
-
   .gatsby-image-wrapper {
     max-height: 300px;
     object-fit: contain;
@@ -82,18 +82,17 @@ const ProjectLink = styled(Link)`
 `
 
 const ProjectTitle = styled.span`
-  overflow: hidden;
   display: inline-block;
-  margin-bottom: -23px;
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1rem 2rem;
     top: 0;
     right: 0;
     z-index: -99;
+    width: 100%;
   }
 `
 
@@ -102,9 +101,11 @@ const Title = styled.h3`
   font-family: LabGrotesqueMono;
   font-weight: 400;
   color: #232323;
+
   @media screen and (min-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.5;
+    text-align: left;
     display: inline-block;
     position: relative;
   }
