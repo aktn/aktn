@@ -82,6 +82,7 @@ const Heading = styled.h3`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 70%;
 `
 
 const Container = styled.div`
