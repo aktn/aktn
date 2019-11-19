@@ -24,6 +24,28 @@ const Wrapper = styled.div`
   }
 `
 
+const Description = styled.div`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+  height: 100px;
+  font-size: 16px;
+  color: #403b3b;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+`
+
+const Card = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  flex: 0 50%;
+  margin-bottom: 50px;
+  width: 100%;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #403b3b;
+`
+
 const ContentLayout = styled.div`
   flex-direction: row;
   display: flex;
@@ -33,25 +55,24 @@ const ContentLayout = styled.div`
   z-index: 20;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  ${ContentLayout}:hover ${Card}:not(:hover) ${Title}:not(:hover)  {
+    opacity: 0.3;
+  }
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 `
 
-const Date = styled.p``
+const Date = styled.p`
+  margin-bottom: 10px;
+`
 
 const Title = styled.h3`
   color: #047a87;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.8px;
-`
-
-const Card = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  flex: 0 50%;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 `
 
 const Heading = styled.h3`
@@ -80,6 +101,9 @@ const BlogList = props => {
             <Card key={blog.id} to={`/blogs/${blog.slug}/`}>
               <Title>{blog.title}</Title>
               <Date>{blog.date}</Date>
+              <Description>
+                {blog.content.childMarkdownRemark.excerpt}
+              </Description>
             </Card>
           ))}
         </ContentLayout>

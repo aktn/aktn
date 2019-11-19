@@ -27,6 +27,12 @@ export const query = graphql`
           title
           slug
           date(formatString: "MMMM Do, YYYY")
+          content {
+            childMarkdownRemark {
+              excerpt
+              html
+            }
+          }
         }
       }
     }
