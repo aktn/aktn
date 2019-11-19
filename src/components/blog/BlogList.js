@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-top: 1rem;
   font-family: LabGrotesqueMono;
-  width: 80%;
+  width: 100%;
   a,
   a:link,
   a:visited,
@@ -21,35 +21,40 @@ const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     align-items: center;
     justify-content: center;
+    width: 80%;
   }
 `
 
 const Description = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 80%;
-  height: 100px;
+  width: 100%;
   font-size: 16px;
   color: #403b3b;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
 `
 
 const Card = styled(Link)`
   display: flex;
   flex-direction: column;
-  flex: 0 50%;
   margin-bottom: 50px;
   width: 100%;
   padding-bottom: 50px;
   border-bottom: 1px solid #403b3b;
+  @media screen and (min-width: 768px) {
+    flex: 0 50%;
+  }
 `
 
 const ContentLayout = styled.div`
   flex-direction: row;
   display: flex;
-  width: 70%;
+  width: 100%;
   font-size: 0.8rem;
   cursor: pointer;
   z-index: 20;
@@ -58,8 +63,13 @@ const ContentLayout = styled.div`
   ${ContentLayout}:hover ${Card}:not(:hover) ${Title}:not(:hover)  {
     opacity: 0.3;
   }
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     flex-direction: row;
+    width: 100%;
+  }
+  @media (min-width:1025px) {
+    flex-direction: row;
+    width: 70%;
   }
 `
 
@@ -82,7 +92,12 @@ const Heading = styled.h3`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 70%;
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media (min-width: 1025px) {
+    width: 70%;
+  }
 `
 
 const Container = styled.div`
