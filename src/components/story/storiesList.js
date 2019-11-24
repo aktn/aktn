@@ -87,7 +87,7 @@ const Heading = styled.h3`
   letter-spacing: 1.1px;
 `
 
-const AboutMeList = props => {
+const StoriesList = props => {
   return (
     <Wrapper>
       <Heading>
@@ -105,4 +105,4 @@ const AboutMeList = props => {
   )
 }
 
-export default AboutMeList
+export default StoriesList
