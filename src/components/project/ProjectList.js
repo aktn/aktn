@@ -30,11 +30,25 @@ const Project = styled.li`
   width: 100%;
   margin-bottom: 5rem;
   z-index: 20;
+  animation-name: animateIn;
+  animation-duration: 350ms;
+  animation-delay: calc((${props => props.animateOrder}) * 120ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
   @media screen and (min-width: 768px) {
-    margin-bottom: 2rem;
+    margin-bottom: 0.6rem;
     flex: 0 0 50%;
     z-index: 20;
     width: 40%;
+  }
+  @keyframes animateIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.6) translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `
 
@@ -79,6 +93,7 @@ const ProjectLink = styled(Link)`
   &:hover h3 {
     @media screen and (min-width: 768px) {
       text-decoration: line-through;
+      color: #007460;
     }
   }
   &:hover ${ProjectCover}::before {
@@ -106,10 +121,9 @@ const Title = styled.h3`
   font-family: LabGrotesqueMono;
   font-weight: 400;
   color: #232323;
-
   @media screen and (min-width: 768px) {
-    font-size: 1.3rem;
-    line-height: 1.5;
+    font-size: 1.5rem;
+
     text-align: left;
     display: inline-block;
     position: relative;
@@ -119,8 +133,8 @@ const Title = styled.h3`
 const ProjectList = props => {
   return (
     <Wrapper>
-      {props.projects.map(({ node: project }) => (
-        <Project key={project.id}>
+      {props.projects.map(({ node: project }, i) => (
+        <Project key={project.id} animateOrder={i}>
           <ProjectLink to={`/projects/${project.slug}/`}>
             <ProjectTitle>
               <Title>{project.title}</Title>
