@@ -175,14 +175,15 @@ class Menu extends Component {
             <Link to="/" onClick={this.hamburger}>
               Home
             </Link>
-            <Link to="/aboutMe" onClick={this.hamburger}>
-              Notes
-            </Link>
+
             <Link to="/projects" onClick={this.hamburger}>
               Projects
             </Link>
             <Link to="/blogs" onClick={this.hamburger}>
               Blogs
+            </Link>
+            <Link to="/stories" onClick={this.hamburger}>
+              My Story
             </Link>
           </Navigation>
         </NavigationContainer>

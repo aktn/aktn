@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
-import AboutMeList from "../components/story/storiesList"
+import StoriesList from "../components/story/storiesList"
 
 const Stories = ({ data }) => {
   const thoughts = data.allContentfulThoughts.edges
