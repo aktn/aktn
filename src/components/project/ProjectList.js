@@ -54,6 +54,7 @@ const Project = styled.li`
 
 const ProjectCover = styled.div`
   position: relative;
+
   .gatsby-image-wrapper {
     max-height: 300px;
     object-fit: contain;
@@ -66,12 +67,6 @@ const ProjectCover = styled.div`
     width: 50%;
     z-index: -10;
     visibility: hidden;
-    .gatsby-image-wrapper {
-      max-height: none;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.5s, visibility 0.4s;
-    }
     div {
       object-fit: cover !important;
       height: 100%;
@@ -81,6 +76,25 @@ const ProjectCover = styled.div`
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
+
+  &:hover .gatsby-image-wrapper {
+    @media screen and (min-width: 768px) {
+      @supports (object-fit: cover) {
+        opacity: 1;
+        display: block;
+        visibility: visible;
+      }
+    }
+  }
+
+  &:hover ${ProjectCover} {
+    opacity: 1;
+    display: block;
+    visibility: visible;
+    background-color: ${props => props.bgColor};
+
+    transition: ease-out 0.5s;
+  }
   &:hover .gatsby-image-wrapper {
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
@@ -97,12 +111,13 @@ const ProjectLink = styled(Link)`
     }
   }
   &:hover ${ProjectCover}::before {
-    background: none;
+    background-color: none;
   }
 `
 
 const ProjectTitle = styled.span`
   display: inline-block;
+
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;
@@ -121,12 +136,31 @@ const Title = styled.h3`
   font-family: LabGrotesqueMono;
   font-weight: 400;
   color: #232323;
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     font-size: 1.5rem;
-
     text-align: left;
     display: inline-block;
     position: relative;
+  }
+`
+
+const ProjectDescription = styled.div`
+  display: none;
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+    display: block;
+  }
+`
+
+const ProjectDetails = styled.div`
+  display: none;
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1% 4%;
+    flex-direction: column;
+    text-align: center;
   }
 `
 
@@ -135,7 +169,10 @@ const ProjectList = props => {
     <Wrapper>
       {props.projects.map(({ node: project }, i) => (
         <Project key={project.id} animateOrder={i}>
-          <ProjectLink to={`/projects/${project.slug}/`}>
+          <ProjectLink
+            to={`/projects/${project.slug}/`}
+            bgColor={project.bgColor}
+          >
             <ProjectTitle>
               <Title>{project.title}</Title>
             </ProjectTitle>
@@ -145,6 +182,14 @@ const ProjectList = props => {
                 title={project.image.title}
                 fluid={project.image.fluid}
               />
+              <ProjectDetails>
+                <h2>{project.title}</h2>
+                <ProjectDescription
+                  dangerouslySetInnerHTML={{
+                    __html: project.about.childMarkdownRemark.html,
+                  }}
+                />
+              </ProjectDetails>
             </ProjectCover>
           </ProjectLink>
         </Project>

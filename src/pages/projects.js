@@ -27,6 +27,13 @@ export const query = graphql`
           title
           slug
           date
+          bgColor
+          about {
+            childMarkdownRemark {
+              excerpt
+              html
+            }
+          }
           image {
             fluid(maxWidth: 1800) {
               ...GatsbyContentfulFluid_withWebp_noBase64
