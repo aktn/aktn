@@ -54,7 +54,6 @@ const Project = styled.li`
 
 const ProjectCover = styled.div`
   position: relative;
-
   .gatsby-image-wrapper {
     max-height: 300px;
     object-fit: contain;
@@ -69,14 +68,16 @@ const ProjectCover = styled.div`
     visibility: hidden;
     div {
       object-fit: cover !important;
-      height: 100%;
+      height: auto;
+    }
+    .gatsby-image-wrapper {
+      max-height: 35vh;
     }
   }
 `
 
 const ProjectLink = styled(Link)`
   text-decoration: none;
-
   &:hover .gatsby-image-wrapper {
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
@@ -96,6 +97,7 @@ const ProjectLink = styled(Link)`
     transition: ease-out 0.5s;
   }
   &:hover .gatsby-image-wrapper {
+    transition: ease-out 0.5s;
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
         opacity: 1;
@@ -117,7 +119,6 @@ const ProjectLink = styled(Link)`
 
 const ProjectTitle = styled.span`
   display: inline-block;
-
   @media screen and (min-width: 768px) {
     display: flex;
     position: relative;
@@ -154,14 +155,39 @@ const ProjectDescription = styled.div`
 
 const ProjectDetails = styled.div`
   display: none;
+  color: #29241e;
+  font-size: 20px;
+  line-height: 2.1;
   @media only screen and (min-width: 768px) {
-    width: 100%;
+    flex: 1;
     display: flex;
-    justify-content: center;
-    padding: 1% 4%;
     flex-direction: column;
-    text-align: center;
+    padding: 2%;
   }
+`
+
+const Header = styled.h2`
+  margin: 30px 0;
+  font-weight: 200;
+  font-size: 3em;
+`
+
+const Tags = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+`
+
+const Tag = styled.div`
+  background-color: gray;
+  margin: 30px 15px 0 0;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  color: #007c89;
+  box-shadow: inset 0 0 0 0.0625rem rgba(0, 124, 137, 0.3);
+  background-color: transparent;
+  transition: all 0.15s linear;
 `
 
 const ProjectList = props => {
@@ -183,12 +209,14 @@ const ProjectList = props => {
                 fluid={project.image.fluid}
               />
               <ProjectDetails>
-                <h2>{project.title}</h2>
-                <ProjectDescription
-                  dangerouslySetInnerHTML={{
-                    __html: project.about.childMarkdownRemark.html,
-                  }}
-                />
+                <Header>{project.title}</Header>
+                <ProjectDescription>{project.summary}</ProjectDescription>
+                <Tags>
+                  {project.tags &&
+                    project.tags.technologies.map(technology => (
+                      <Tag>{technology}</Tag>
+                    ))}
+                </Tags>
               </ProjectDetails>
             </ProjectCover>
           </ProjectLink>

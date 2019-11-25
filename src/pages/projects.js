@@ -28,6 +28,10 @@ export const query = graphql`
           slug
           date
           bgColor
+          summary
+          tags {
+            technologies
+          }
           about {
             childMarkdownRemark {
               excerpt
