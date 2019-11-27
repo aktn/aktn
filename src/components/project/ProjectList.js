@@ -54,6 +54,8 @@ const Project = styled.li`
 
 const ProjectCover = styled.div`
   position: relative;
+  background: none;
+
   .gatsby-image-wrapper {
     max-height: 300px;
     object-fit: contain;
@@ -65,7 +67,10 @@ const ProjectCover = styled.div`
     height: 100%;
     width: 50%;
     z-index: -10;
-    visibility: hidden;
+    display: none;
+    opacity: 0;
+    // visibility: hidden;
+
     div {
       object-fit: cover !important;
       height: auto;
@@ -83,7 +88,6 @@ const ProjectLink = styled(Link)`
       @supports (object-fit: cover) {
         opacity: 1;
         display: block;
-        visibility: visible;
       }
     }
   }
@@ -91,17 +95,24 @@ const ProjectLink = styled(Link)`
   &:hover ${ProjectCover} {
     opacity: 1;
     display: block;
-    visibility: visible;
+    // visibility: visible;
     background-color: ${props => props.bgColor};
-
-    transition: ease-out 0.5s;
+    @media only screen and (min-width: 768px) {
+      animation: fade-in 0.5s;
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
   }
   &:hover .gatsby-image-wrapper {
     transition: ease-out 0.5s;
     @media screen and (min-width: 768px) {
       @supports (object-fit: cover) {
-        opacity: 1;
-        display: block;
         visibility: visible;
       }
     }
@@ -155,7 +166,8 @@ const ProjectDescription = styled.div`
 
 const ProjectDetails = styled.div`
   display: none;
-  color: #29241e;
+  // color: #29241e;
+  color: #fff;
   font-size: 20px;
   line-height: 2.1;
   @media only screen and (min-width: 768px) {
