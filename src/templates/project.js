@@ -14,7 +14,15 @@ const Container = styled.div`
 `
 
 const ProjectTemplate = ({ data, pageContext }) => {
-  const { title, date, url, git, about, gallery } = data.contentfulProject
+  const {
+    title,
+    date,
+    url,
+    git,
+    about,
+    gallery,
+    video,
+  } = data.contentfulProject
   const previous = pageContext.prev
   const next = pageContext.next
   return (
@@ -31,6 +39,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
           url={url}
           git={git}
         ></ProjectDetails>
+        <ProjectVideo video={video} />
         <ProjectImages gallery={gallery}></ProjectImages>
       </Container>
     </>
@@ -59,6 +68,13 @@ export const query = graphql`
       image {
         fluid(maxWidth: 1800) {
           ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+      }
+      video {
+        id
+        title
+        file {
+          url
         }
       }
     }

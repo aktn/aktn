@@ -2,15 +2,16 @@ import React from "react"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  display: none;
-  margin: 0 0 1rem 0;
-  background: #a3bce6;
+  display: block;
+  background-color: #fcfcfc;
+  margin: 7.5% 20%;
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
   video {
-    width: 100%;
-    background: #a3bce6;
-  }
-  @media screen and (min-width: 768px) {
-    display: block;
+    background-color: red;
+    pointer-events: none;
+    width: 70%;
   }
 `
 
@@ -21,10 +22,8 @@ const ProjectVideo = props => {
         <Wrapper>
           <video
             preload="auto"
-            poster={props.thumbnail.fluid.src}
             loop
             muted
-            autoPlay
             autoPlay
             playsInline
             src={props.video.file.url}
