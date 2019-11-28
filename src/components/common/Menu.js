@@ -183,7 +183,7 @@ class Menu extends Component {
               Blogs
             </Link>
             <Link to="/stories" onClick={this.hamburger}>
-              My Story
+              My Stories
             </Link>
           </Navigation>
         </NavigationContainer>

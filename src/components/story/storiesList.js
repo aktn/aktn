@@ -112,7 +112,7 @@ const StoriesList = props => {
         experiences particulary in science, psychology, philoshophy & history.
       </Paragraph>
       {props.thoughts.map(({ node: thought }, index) => (
-        <Contents key={thought.id} to={`/aboutMe/${thought.slug}/`}>
+        <Contents key={thought.id} to={`/stories/${thought.slug}/`}>
           <Section>
             <Title>{thought.title}</Title>
             <Date>{thought.date}</Date>

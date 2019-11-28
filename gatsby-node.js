@@ -87,5 +87,44 @@ exports.createPages = ({ graphql, actions }) => {
       })
   })
 
-  return Promise.all([loadProjects, loadBlogs])
+  const loadThoughts = new Promise((resolve, reject) => {
+    graphql(
+      `
+        {
+          allContentfulThoughts {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
+        }
+      `
+    )
+      .then(result => {
+        if (result.errors) {
+          console.log("Error getting data", result.errors)
+        }
+
+        const storyTemplate = path.resolve("./src/templates/story.js")
+
+        result.data.allContentfulThoughts.edges.forEach(edge => {
+          createPage({
+            path: `/stories/${edge.node.slug}/`,
+            component: slash(storyTemplate),
+            context: {
+              slug: edge.node.slug,
+              id: edge.node.id,
+            },
+          })
+        })
+        resolve()
+      })
+      .catch(error => {
+        console.log("Error retrieving contentful data", error)
+      })
+  })
+
+  return Promise.all([loadProjects, loadBlogs, loadThoughts])
 }

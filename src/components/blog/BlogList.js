@@ -112,7 +112,7 @@ const BlogList = props => {
   return (
     <Container>
       <Wrapper>
-        <Heading>Blog</Heading>
+        <Heading>Things I have learned</Heading>
         <ContentLayout>
           {props.blogs.map(({ node: blog }, index) => (
             <Card key={blog.id} to={`/blogs/${blog.slug}/`}>
