@@ -83,6 +83,7 @@ const Title = styled.h3`
   font-size: 20px;
   letter-spacing: 0.8px;
   margin-bottom: 10px;
+  width: 80%;
 `
 
 const Heading = styled.h3`

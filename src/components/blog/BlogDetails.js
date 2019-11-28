@@ -31,6 +31,7 @@ const Content = styled.div`
   .gatsby-highlight,
   .language-text {
     width: 100%;
+    overflow: auto;
   }
   video {
     width: 100%;

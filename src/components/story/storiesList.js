@@ -20,9 +20,11 @@ const Wrapper = styled.div`
     text-decoration: none;
   }
   padding: 0 20px;
+  margin: 0;
   @media screen and (min-width: 768px) {
     align-items: center;
     justify-content: center;
+    margin: 0 20%;
   }
 `
 
@@ -30,8 +32,8 @@ const Contents = styled(Link)`
   flex-direction: row;
   flex: 1;
   display: flex;
-  max-width: 100vw - 15rem;
-  min-width: 100vw - 20rem;
+  // max-width: 100vw - 15rem;
+  // min-width: 100vw - 20rem;
   width: 100%;
   font-size: 0.8rem;
   cursor: pointer;
@@ -39,8 +41,8 @@ const Contents = styled(Link)`
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {
     flex-flow: row;
-    max-width: 800px;
-    min-width: 700px;
+    // max-width: 800px;
+    // min-width: 700px;
   }
 `
 
@@ -53,7 +55,7 @@ const Date = styled.p`
   }
 `
 
-const Title = styled.h3`
+const Title = styled.p`
   flex: 2;
   font-size: 0.9rem;
   line-height: 2rem;
@@ -66,7 +68,7 @@ const Title = styled.h3`
   @media screen and (min-width: 768px) {
     line-height: 1rem;
     display: inline-block;
-    padding: 0 12px;
+    padding: 0;
     font-size: 0.9rem;
     font-weight: 500;
   }
@@ -83,16 +85,32 @@ const Section = styled.div`
 
 const Heading = styled.h3`
   font-size: 1.3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   letter-spacing: 1.1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+`
+
+const Paragraph = styled.p`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  font-size: 0.9rem;
+  padding-bottom: 0.3rem;
 `
 
 const StoriesList = props => {
   return (
     <Wrapper>
-      <Heading>
-        Here's a few things that come out from my thoughts & experiences.{" "}
-      </Heading>
+      <Heading>Writing</Heading>
+      <Paragraph>
+        Here's a few things that come out from my thoughts, stories &
+        experiences particulary in science, psychology, philoshophy & history.
+      </Paragraph>
       {props.thoughts.map(({ node: thought }, index) => (
         <Contents key={thought.id} to={`/aboutMe/${thought.slug}/`}>
           <Section>
