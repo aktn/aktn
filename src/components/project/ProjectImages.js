@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Images = styled.div`
   flex: 1;
-  background-color: #fff;
+  background-color: #f7f7f7;
 `
 
 const Image = styled.div`
@@ -15,9 +15,13 @@ const Image = styled.div`
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  background-color: #fff;
+  margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    padding: 5%;
+
+    width: 70%;
     height: 50%;
   }
 `

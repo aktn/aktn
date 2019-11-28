@@ -28,7 +28,11 @@ const Content = styled.div`
       width: 50%;
     }
   }
-  .gatsby-highlight,
+  .gatsby-highlight {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
   .language-text {
     width: 100%;
     overflow: auto;

@@ -38,8 +38,10 @@ const Navigation = styled.div`
 `
 
 const NavigationContainer = styled.div`
+  //to be fixed
   min-height: 100vh;
   min-width: 100vw;
+
   position: absolute;
   overflow: hidden;
   padding-top: 70px;
@@ -74,9 +76,13 @@ const NavigationContainer = styled.div`
   }
   @media only screen and (min-width: 768px) {
     z-index: ${props => (props.activeStatus ? "30" : "15")};
+    // min-height: 100vh;
+    // min-width: 100vw;
+    // visibility: hidden;
     &.is-open {
       min-height: 100vh;
       min-width: 100vw;
+      // visibility: visible;
     }
   }
 `
