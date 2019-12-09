@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   background-color: #f7f7f7;
-  font-family: LabGrotesqueMono;
+  font-family: "Noto Sans", sans-serif;
   margin: 1rem 0.5rem;
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -21,17 +21,14 @@ const LeftColumn = styled.div`
 
 const Description = styled.div`
   font-size: 18px;
-  line-height: 55px;
-  letter-spacing: 0.1em;
-  font-weight: 200;
-  color: #888;
+  letter-spacing: 1px;
+  color: #232323;
   font-weight: 400;
   line-height: 1.5;
   border-right: 0px;
-
+  font-weight: 400;
   @media screen and (min-width: 768px) {
     padding-right: 10px;
-    font-size: 20px;
   }
 `
 
@@ -58,6 +55,8 @@ const Links = styled.ul`
 const ExternalLink = styled.li`
   max-width: 250px;
   cursor: pointer;
+  border-bottom: 1px solid #232323;
+  padding-bottom: 2px;
   a,
   a:link,
   a:visited,

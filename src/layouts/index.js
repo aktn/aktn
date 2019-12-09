@@ -4,7 +4,7 @@ import "./layout.css"
 import { StaticQuery, graphql } from "gatsby"
 import Menu from "../components/common/Menu"
 import Helmet from "react-helmet"
-import favicon from "./../images/me.jpg"
+import favicon from "./../images/mickey.png"
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -21,7 +21,7 @@ const Layout = ({ children, location }) => (
       <>
         <Helmet
           link={[
-            { rel: "shortcut icon", type: "image/jpg", href: `${favicon}` },
+            { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
           ]}
         />
         <Menu />

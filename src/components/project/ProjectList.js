@@ -39,7 +39,7 @@ const Project = styled.li`
     margin-bottom: 0.6rem;
     flex: 0 0 50%;
     z-index: 20;
-    width: 40%;
+    width: 50%;
   }
   @keyframes animateIn {
     0% {

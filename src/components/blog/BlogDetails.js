@@ -5,18 +5,17 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: LabGrotesqueMono;
+  font-family: "Noto Sans", sans-serif;
 `
 
 const Content = styled.div`
   font-weight: 200;
   color: #212121;
-  line-height: 55px;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
+  letter-spacing: 1px;
   border-bottom: 2px dashed #414141;
+  line-height: 1.85;
   h3 {
-    font-size: 15px;
+    font-size: 24px;
   }
   img {
     width: 100%;
@@ -36,6 +35,8 @@ const Content = styled.div`
   .language-text {
     width: 100%;
     overflow: auto;
+    letter-spacing: 0em;
+    color: #2f5732;
   }
   video {
     width: 100%;
@@ -55,17 +56,18 @@ const Input = styled.input`
   padding: 6px 8px;
   border: none;
   outline: none;
-  background-color: #cce0e0;
+  background-color: transparent;
   border-bottom: 2px solid #241c15;
   margin: 0;
-  border-color: ${props => (props.error ? "red" : "black")};
+  color: #fff;
+  border-color: ${props => (props.error ? "red" : "#fff")};
 `
 
 const SubscribePanel = styled.div`
   width: 100%;
   height: 300px;
   margin-top: 30px;
-  background-color: #fbeeca;
+  background-color: #517d60;
   display: flex;
   flex-direction: column;
   font-family: Cooper, Georgia, Times, Times New Roman, serif;
@@ -80,7 +82,7 @@ const InputPanel = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #cce0e0;
+  background-color: #668085;
 `
 
 const ContentPanel = styled.div`
@@ -88,7 +90,7 @@ const ContentPanel = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #241c15;
+  color: #fff;
   font-size: 26px;
   text-align: center;
   @media screen and (min-width: 768px) {
@@ -101,15 +103,18 @@ const SubmitBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 50px;
-  font-size: 16px;
-  background-color: #e9ebe8;
-  color: #241c15;
+  padding: 5px 0px 5px 0px;
+  font-size: 26px;
+  background-color: transparent;
+  color: #fff;
   cursor: pointer;
   outline: none;
-  border: 1px solid #241c15;
+  border: none;
+  border-bottom: 2px solid #fff;
+  transition: width 2s;
   &:hover {
     letter-spacing: 2px;
+    padding-left: 20px;
   }
 `
 
@@ -117,9 +122,9 @@ const FormWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: space-evenly;
-  flex-direction: column;
+  flex-direction: row;
   width: 90%;
-  height: 100%;
+  height: 20%;
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -141,7 +146,8 @@ const BlogDetails = props => {
         setLoadingStatus(false)
       })
       .catch(err => {
-        console.log(err)
+        setMessage(err)
+        setLoadingStatus(false)
       })
   }
 
@@ -149,9 +155,9 @@ const BlogDetails = props => {
   if (loadingStatus) {
     buttonContent = "Sending..."
   } else if (message.result === "success") {
-    buttonContent = "Done"
+    buttonContent = "✓"
   } else {
-    buttonContent = "Submit"
+    buttonContent = "→"
   }
 
   return (

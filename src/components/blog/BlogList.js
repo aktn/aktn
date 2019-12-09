@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
-  font-family: LabGrotesqueMono;
+  font-family: "Noto Sans", sans-serif;
   width: 100%;
   a,
   a:link,

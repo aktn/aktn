@@ -13,6 +13,9 @@ const ExternalLinks = styled.div`
     cursor: pointer;
     z-index: 20;
     text-decoration: none;
+    &:hover {
+      color: gray;
+    }
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;

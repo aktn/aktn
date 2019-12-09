@@ -22,7 +22,7 @@ const Name = styled.p`
   position: absolute;
   top: 238px;
   z-index: 2;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 768px) {
     top: 231px;
     font-size: 7em;
     padding-right: 400px;
@@ -34,46 +34,41 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  @media screen and (min-width: 800px) {
+  margin: 0 5%;
+  @media screen and (min-width: 768px) {
     flex-direction: row;
+    min-width: 700px;
+    max-width: 900px;
+    height: 380px;
+    margin: 0 4%;
+    margin-bottom: 100px;
   }
 `
 const About = styled.div`
+  flex: 1;
   display: inline-block;
-  max-width: 400px;
-  min-width: 300px;
-  width: 95%;
+  height: 100%;
   font-size: 16px;
   color: #fff;
   box-sizing: border-box;
   text-align: left;
   padding: 20px;
   background-color: #3c7368;
-  max-height: 500px;
-  min-height: 400px;
-  @media screen and (min-width: 800px) {
-    min-width: 400px;
-    width: 100%;
-    font-size: 16px;
-  }
 `
-const Picture = styled(Img)`
-  display: inline-block;
-  max-width: 400px;
-  min-width: 300px;
-  min-height: 400px;
-  max-height: 500px;
+
+const ImgWrapper = styled.div`
+  flex: 1;
   height: 100%;
-  width: 95%;
+  width: 100%;
+  background-color: red;
+`
+
+const Picture = styled(Img)`
   text-align: left;
-  padding: 10px;
   background-color: #ddd;
-  img {
-  }
-  @media screen and (min-width: 800px) {
-    width: 100%;
-    min-width: 400px;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `
 
 const IndexPage = ({ data }) => {
@@ -88,7 +83,9 @@ const IndexPage = ({ data }) => {
         <Container>
           <Name>Aung.</Name>
           <Wrapper>
-            <Picture fluid={me.fluid} alt={"me"} />
+            <ImgWrapper>
+              <Picture fluid={me.fluid} alt={"me"} />
+            </ImgWrapper>
             <About
               dangerouslySetInnerHTML={{
                 __html: description.childMarkdownRemark.html,

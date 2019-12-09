@@ -32,8 +32,6 @@ const Contents = styled(Link)`
   flex-direction: row;
   flex: 1;
   display: flex;
-  // max-width: 100vw - 15rem;
-  // min-width: 100vw - 20rem;
   width: 100%;
   font-size: 0.8rem;
   cursor: pointer;
@@ -41,8 +39,6 @@ const Contents = styled(Link)`
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {
     flex-flow: row;
-    // max-width: 800px;
-    // min-width: 700px;
   }
 `
 

@@ -8,11 +8,9 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  font-weight: 200;
+  font-weight: 500;
   color: #212121;
-  line-height: 55px;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
+  line-height: 1.8;
   border-bottom: 2px dashed #414141;
   h3 {
     font-size: 24px;
