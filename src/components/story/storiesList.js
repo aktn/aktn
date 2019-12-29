@@ -53,13 +53,12 @@ const Date = styled.p`
 
 const Title = styled.p`
   flex: 2;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 2rem;
   color: #232323;
   z-index: 36;
   padding: 0 0 5px 0;
   margin: 0;
-  font-weight: 600;
   letter-spacing: 1.1px;
   @media screen and (min-width: 768px) {
     line-height: 1rem;
@@ -95,7 +94,7 @@ const Paragraph = styled.p`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   padding-bottom: 0.3rem;
 `
 

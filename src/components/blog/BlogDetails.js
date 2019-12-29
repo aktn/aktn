@@ -45,7 +45,6 @@ const Content = styled.div`
     margin: 0 0 2rem 0;
   }
   @media screen and (min-width: 768px) {
-    padding: 0 10px;
     font-size: 16px;
   }
 `

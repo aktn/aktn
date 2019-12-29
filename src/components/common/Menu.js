@@ -22,7 +22,7 @@ const Navigation = styled.div`
     transform-origin: right center;
     opacity: 0;
     transform: translate3d(100px, 100px, 0) skewY(-10deg);
-    padding: 50px 20px;
+    padding: 30px 20px;
     display: block;
     visibility: hidden;
     @media screen and (min-width: 900px) {

@@ -68,6 +68,8 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+.src/pages/hireMe.js
+
 .env
 .env.development
 .env.production

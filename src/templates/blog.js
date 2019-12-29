@@ -7,11 +7,9 @@ import Helmet from "react-helmet"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   margin: 1.5rem 1rem;
   @media screen and (min-width: 768px) {
-    margin: 3rem 3.5rem;
+    margin: 3rem 25%;
   }
 `
 
@@ -20,7 +18,8 @@ const Title = styled.h3`
   padding-bottom: 2rem;
   @media screen and (min-width: 768px) {
     font-size: 5rem;
-    width: 70%;
+    width: 100%:
+    padding: 0 25%;
   }
 `
 

@@ -12,6 +12,7 @@ const Content = styled.div`
   color: #212121;
   line-height: 1.8;
   border-bottom: 2px dashed #414141;
+  font-size: 1.1rem;
   h3 {
     font-size: 24px;
   }
@@ -38,7 +39,7 @@ const Content = styled.div`
   }
   @media screen and (min-width: 768px) {
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 1.1rem;
   }
 `
 
