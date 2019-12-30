@@ -6,16 +6,31 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: "Noto Sans", sans-serif;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `
 
 const Content = styled.div`
   font-weight: 200;
   color: #212121;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   border-bottom: 2px dashed #414141;
   line-height: 1.85;
+  padding: 0;
+  width: 100vw;
   h3 {
     font-size: 24px;
+    padding: 0 5%;
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+  p {
+    padding: 0 5%;
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
   img {
     width: 100%;
@@ -28,15 +43,12 @@ const Content = styled.div`
     }
   }
   .gatsby-highlight {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-  .language-text {
-    width: 100%;
-    overflow: auto;
-    letter-spacing: 0em;
-    color: #2f5732;
+    .language-html,
+    .language-javascript {
+      border-radius: 0;
+      margin: 0;
+      margin-bottom: 30px;
+    }
   }
   video {
     width: 100%;
@@ -45,8 +57,10 @@ const Content = styled.div`
     margin: 0 0 2rem 0;
   }
   @media screen and (min-width: 768px) {
-    padding: 0 10px;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 0;
+    width: 100%;
+    max-width: 700px;
   }
 `
 
@@ -67,7 +81,7 @@ const SubscribePanel = styled.div`
   width: 100%;
   height: 300px;
   margin-top: 30px;
-  background-color: #517d60;
+  background-color: #5a6968;
   display: flex;
   flex-direction: column;
   font-family: Cooper, Georgia, Times, Times New Roman, serif;
@@ -90,20 +104,24 @@ const ContentPanel = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  font-size: 26px;
+  color: #f0ebeb;
+  font-size: 22px;
   text-align: center;
   @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 1024px) {
     font-size: 36px;
   }
 `
 
 const SubmitBtn = styled.button`
   width: 20%;
+  height: 37px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px 15px 0px;
   font-size: 26px;
   background-color: transparent;
   color: #fff;
@@ -116,12 +134,15 @@ const SubmitBtn = styled.button`
     letter-spacing: 2px;
     padding-left: 20px;
   }
+  @media only screen and (min-width: 768px) {
+    height: 40px;
+  }
 `
 
 const FormWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  align-items: space-evenly;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   width: 90%;
   height: 20%;

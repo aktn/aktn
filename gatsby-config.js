@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: "36dfyspxvwp9",
+        accessToken: "J966AALxVLL4-hOsESzkVZxLN9nB2q_HRkuLwM3_7wA",
       },
     },
     {
@@ -55,6 +55,13 @@ module.exports = {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: { sh: "bash", js: "javascript" },
+              showLineNumbers: false,
             },
           },
           `gatsby-remark-prismjs`,
