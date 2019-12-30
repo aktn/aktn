@@ -48,6 +48,7 @@ const Content = styled.div`
       border-radius: 0;
       margin: 0;
       margin-bottom: 30px;
+      background-color:#282c34;
     }
   }
   video {

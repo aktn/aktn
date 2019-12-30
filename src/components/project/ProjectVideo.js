@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   video {
-    background-color: red;
+    background-color: #f2f2f2;
     pointer-events: none;
     width: 70%;
   }
