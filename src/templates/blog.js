@@ -7,19 +7,20 @@ import Helmet from "react-helmet"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1.5rem 1rem;
-  @media screen and (min-width: 768px) {
-    margin: 3rem 25%;
-  }
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.h3`
   font-size: 3rem;
-  padding-bottom: 2rem;
+  padding: 0 0 2rem 0;
+  width: 100vw;
+  padding: 0 5%;
   @media screen and (min-width: 768px) {
     font-size: 5rem;
-    width: 100%:
-    padding: 0 25%;
+    width: 100%;
+    max-width: 700px;
+    padding: 0;
   }
 `
 

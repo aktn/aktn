@@ -57,15 +57,20 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              aliases: { sh: "bash", js: "javascript" },
+              showLineNumbers: false,
+            },
+          },
         ],
       },
     },
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint:
-          "https://aungthet.us5.list-manage.com/subscribe/post?u=6590c050e211d0cfe467751f7&amp;id=81cd9ec5a2",
+        endpoint: `https://aungthet.us5.list-manage.com/subscribe/post?u=6590c050e211d0cfe467751f7&amp;id=${process.env.MAIL_CHIMP_ID}`,
       },
     },
 

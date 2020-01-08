@@ -60,16 +60,16 @@ const ContentLayout = styled.div`
   z-index: 20;
   margin-bottom: 20px;
   flex-wrap: wrap;
-  ${ContentLayout}:hover ${Card}:not(:hover) ${Title}:not(:hover)  {
-    opacity: 0.3;
-  }
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     width: 100%;
   }
-  @media (min-width:1025px) {
+  @media (min-width: 1025px) {
     flex-direction: row;
     width: 70%;
+  }
+  ${ContentLayout}:hover ${Card}:not(:hover) ${Title}:not(:hover) {
+    opacity: 0.3;
   }
 `
 
