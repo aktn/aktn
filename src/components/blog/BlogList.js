@@ -68,7 +68,7 @@ const ContentLayout = styled.div`
     flex-direction: row;
     width: 70%;
   }
-  ${ContentLayout}:hover ${Card}:not(:hover) ${Title}:not(:hover) {
+  &:hover ${Card}:not(:hover) {
     opacity: 0.3;
   }
 `

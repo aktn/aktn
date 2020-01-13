@@ -73,6 +73,14 @@ module.exports = {
         endpoint: `https://aungthet.us5.list-manage.com/subscribe/post?u=6590c050e211d0cfe467751f7&amp;id=${process.env.MAIL_CHIMP_ID}`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

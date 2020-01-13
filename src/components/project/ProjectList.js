@@ -96,7 +96,7 @@ const ProjectLink = styled(Link)`
     opacity: 1;
     display: block;
     // visibility: visible;
-    background-color: ${props => props.bgColor};
+    background-color: #362929;
     @media only screen and (min-width: 768px) {
       animation: fade-in 0.5s;
       @keyframes fade-in {
@@ -225,8 +225,8 @@ const ProjectList = props => {
                 <ProjectDescription>{project.summary}</ProjectDescription>
                 <Tags>
                   {project.tags &&
-                    project.tags.technologies.map(technology => (
-                      <Tag>{technology}</Tag>
+                    project.tags.technologies.map((technology, i) => (
+                      <Tag key={i}>{technology}</Tag>
                     ))}
                 </Tags>
               </ProjectDetails>

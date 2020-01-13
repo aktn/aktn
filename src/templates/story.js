@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1.5rem 1rem;
-  @media screen and (min-width: 768px) {
-    margin: 3rem 3.5rem;
+  @media screen and (min-width: 1024px) {
+    margin: 3rem 10rem;
   }
 `
 

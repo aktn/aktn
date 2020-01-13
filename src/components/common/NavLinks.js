@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import RightArrow from "./../../images/assets/right-arrow.svg"
+import LeftArrow from "./../../images/assets/left-arrow.svg"
 
 const Wrapper = styled.div`
   z-index: 20;
@@ -20,7 +22,6 @@ const Wrapper = styled.div`
 
 const Next = styled.span`
   padding-right: 1rem;
-  transform: rotate(90deg);
   right: 3.25rem;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
   a,
@@ -40,9 +41,10 @@ const Next = styled.span`
 
 const Previous = styled.span`
   padding-right: 1rem;
-  transform: rotate(-90deg) !important;
   left: 3.25rem;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #232323;
+  display: block;
   a,
   a:link,
   a:visited,
@@ -62,12 +64,16 @@ const NavLinks = props => {
     <Wrapper>
       {props.previous && (
         <Previous>
-          <Link to={`projects/${props.previous.slug}/`}>Prev</Link>
+          <Link to={`projects/${props.previous.slug}/`}>
+            <LeftArrow width="25" height="25" />
+          </Link>
         </Previous>
       )}
       {props.next && (
         <Next>
-          <Link to={`projects/${props.next.slug}/`}>Next</Link>
+          <Link to={`projects/${props.next.slug}/`}>
+            <RightArrow width="25" height="25" />
+          </Link>
         </Next>
       )}
     </Wrapper>

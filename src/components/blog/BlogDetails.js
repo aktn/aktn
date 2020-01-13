@@ -32,6 +32,10 @@ const Content = styled.div`
       padding: 0;
     }
   }
+  .language-text {
+    background-color: #f2f2f2;
+    color: #232323;
+  }
   img {
     width: 100%;
     text-align: center;
@@ -44,10 +48,12 @@ const Content = styled.div`
   }
   .gatsby-highlight {
     .language-html,
-    .language-javascript {
+    .language-javascript,
+    .language-typescript {
       border-radius: 0;
       margin: 0;
       margin-bottom: 30px;
+      background-color: #302f36;
     }
   }
   video {
@@ -117,7 +123,7 @@ const ContentPanel = styled.div`
 
 const SubmitBtn = styled.button`
   width: 20%;
-  height: 39px;
+  height: 38px;
   display: flex;
   justify-content: center;
   align-items: center;

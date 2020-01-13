@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #f7f7f7;
+  background-color: #fff;
   font-family: "Noto Sans", sans-serif;
   margin: 1rem 0.5rem;
   @media screen and (min-width: 768px) {
@@ -57,6 +57,8 @@ const ExternalLink = styled.li`
   cursor: pointer;
   border-bottom: 1px solid #232323;
   padding-bottom: 2px;
+
+  transition: background-position 0.5s ease-in-out;
   a,
   a:link,
   a:visited,
@@ -65,6 +67,9 @@ const ExternalLink = styled.li`
   a:active {
     color: #232323;
     text-decoration: none;
+  }
+  &:hover {
+    border-bottom: 1px solid #232323;
   }
   z-index: 15;
   @media screen and (min-width: 768px) {
