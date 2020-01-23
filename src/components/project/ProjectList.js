@@ -96,7 +96,7 @@ const ProjectLink = styled(Link)`
     opacity: 1;
     display: block;
     // visibility: visible;
-    background-color: #362929;
+    background-color: ${props => props.bgColor};
     @media only screen and (min-width: 768px) {
       animation: fade-in 0.5s;
       @keyframes fade-in {

@@ -28,7 +28,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         const projects = result.data.allContentfulProject.edges
         projects.forEach((edge, i) => {
-          console.log(edge)
           const prev = i === 0 ? null : projects[i - 1].node
           const next = i === projects.length - 1 ? null : projects[i + 1].node
           createPage({
@@ -127,5 +126,44 @@ exports.createPages = ({ graphql, actions }) => {
       })
   })
 
-  return Promise.all([loadProjects, loadBlogs, loadThoughts])
+  const loadCaseStudy = new Promise((resolve, reject) => {
+    graphql(
+      `
+        {
+          allContentfulCaseStudy {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
+        }
+      `
+    )
+      .then(result => {
+        if (result.errors) {
+          console.log("Error getting data", result.errors)
+        }
+
+        const caseStudyTemplate = path.resolve("./src/templates/caseStudy.js")
+
+        result.data.allContentfulCaseStudy.edges.forEach(edge => {
+          createPage({
+            path: `/caseStudies/${edge.node.slug}/`,
+            component: slash(caseStudyTemplate),
+            context: {
+              slug: edge.node.slug,
+              id: edge.node.id,
+            },
+          })
+        })
+        resolve()
+      })
+      .catch(error => {
+        console.log("Error retrieving contentful data", error)
+      })
+  })
+
+  return Promise.all([loadProjects, loadBlogs, loadThoughts, loadCaseStudy])
 }

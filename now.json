@@ -7,5 +7,17 @@
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     }
-  ]
+  ],
+  "env": {
+    "SPACE_ID": "@space_id",
+    "ACCESS_TOKEN": "@access_token",
+    "MAIL_CHIMP_ID": "@mail_chimp_id"
+  },
+  "build": {
+    "env": {
+      "SPACE_ID": "@space_id",
+      "ACCESS_TOKEN": "@access_token",
+      "MAIL_CHIMP_ID": "@mail_chimp_id"
+    }
+  }
 }
