@@ -9,19 +9,21 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: 7rem 0 0;
+  margin: 3rem 0 0;
   padding: 0rem 1rem;
   @media screen and (min-width: 768px) {
     flex-flow: column;
     min-height: calc(100vh - 5rem);
     margin: 0;
     width: 80%;
+    padding: 0;
   }
   @media screen and (min-width: 1025px) {
     flex-flow: column;
     min-height: calc(100vh - 5rem);
     margin: 0;
     width: 50%;
+    padding: 0;
   }
 `
 
@@ -30,11 +32,7 @@ const Project = styled.li`
   width: 100%;
   margin-bottom: 5rem;
   z-index: 20;
-  animation-name: animateIn;
-  animation-duration: 350ms;
-  animation-delay: calc((${props => props.animateOrder}) * 120ms);
-  animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
+  
   @media screen and (min-width: 768px) {
     margin-bottom: 0.6rem;
     flex: 0 0 50%;
@@ -61,7 +59,7 @@ const ProjectCover = styled.div`
     object-fit: contain;
   }
   @media screen and (min-width: 768px) {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     height: 100%;
@@ -69,6 +67,7 @@ const ProjectCover = styled.div`
     z-index: -10;
     display: none;
     opacity: 0;
+
     // visibility: hidden;
 
     div {

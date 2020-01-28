@@ -22,6 +22,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
     about,
     gallery,
     video,
+    caseStudy,
   } = data.contentfulProject
   const previous = pageContext.prev
   const next = pageContext.next
@@ -38,6 +39,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
           date={date}
           url={url}
           git={git}
+          caseStudy={caseStudy}
         ></ProjectDetails>
         <ProjectVideo video={video} />
         <ProjectImages gallery={gallery}></ProjectImages>
@@ -53,6 +55,7 @@ export const query = graphql`
       date
       git
       url
+      caseStudy
       gallery {
         fluid(maxWidth: 1800) {
           ...GatsbyContentfulFluid_withWebp_noBase64

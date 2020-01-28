@@ -43,7 +43,6 @@ const Previous = styled.span`
   padding-right: 1rem;
   left: 3.25rem;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid #232323;
   display: block;
   a,
   a:link,

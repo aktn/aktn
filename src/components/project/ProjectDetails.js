@@ -52,12 +52,12 @@ const Links = styled.ul`
     margin-top: 100px;
   }
 `
+
 const ExternalLink = styled.li`
   max-width: 250px;
   cursor: pointer;
   border-bottom: 1px solid #232323;
   padding-bottom: 2px;
-
   transition: background-position 0.5s ease-in-out;
   a,
   a:link,
@@ -68,12 +68,9 @@ const ExternalLink = styled.li`
     color: #232323;
     text-decoration: none;
   }
-  &:hover {
-    border-bottom: 1px solid #232323;
-  }
   z-index: 15;
   @media screen and (min-width: 768px) {
-    margin: 5px 0;
+    margin: 8px 0;
   }
 `
 
@@ -107,6 +104,16 @@ const ProjectDetails = (props, children) => {
           {props.url && (
             <a href={props.url} target="_blank" rel="noopener noreferrer">
               URL
+            </a>
+          )}
+        </ExternalLink>
+        <ExternalLink>
+          {props.caseStudy && (
+            <a
+              href={`../../caseStudies/${props.caseStudy}`}
+              rel="noopener noreferrer"
+            >
+              Case Study
             </a>
           )}
         </ExternalLink>

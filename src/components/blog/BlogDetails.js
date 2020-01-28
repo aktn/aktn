@@ -103,6 +103,10 @@ const InputPanel = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #668085;
+  border-radius: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 `
 
 const ContentPanel = styled.div`
@@ -200,7 +204,7 @@ const BlogDetails = props => {
             <Input
               placeholder="abc@example.com"
               onChange={handleInputChange}
-              error={message.result == "error"}
+              error={message.result === "error"}
             ></Input>
             <SubmitBtn onClick={handleSubmit}>{buttonContent}</SubmitBtn>
           </FormWrapper>

@@ -22,27 +22,23 @@ const Content = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  ol {
-    a {
-      cursor: pointer;
-      z-index: 100;
-      text-decoration: none;
-      color: #585858;
-    }
-  }
+
   div {
     a {
       cursor: pointer;
       z-index: 100;
       text-decoration: none;
-      color: #585858;
+      color: inherit;
     }
   }
   h1 {
-    padding: 15px 0;
+    padding: 2% 5%;
     font-size: 35px;
     ${Width};
     color: #212121;
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
   h3 {
     font-size: 24px;
@@ -56,7 +52,7 @@ const Content = styled.div`
     &:hover {
       :after {
         content: " #";
-        color: skyblue;
+        color: purple;
       }
     }
   }
@@ -92,7 +88,8 @@ const Content = styled.div`
       margin: 0;
       margin-bottom: 30px;
       background-color: #302f36;
-      width: 100vw;
+      max-width: 100vw;
+      overflow-x: scroll;
       @media only screen and (min-width: 768px) {
         ${Width};
         min-width: 700px;
@@ -123,22 +120,42 @@ const Content = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    z-index: 100;
-    width: 100%;
+    z-index: 15;
+
     li {
-      ${Width};
       margin-left: 8%;
       padding-bottom: 1%;
       padding-right: 4%;
     }
+    a {
+      cursor: pointer;
+      z-index: 100;
+      text-decoration: none;
+      color: inherit;
+    }
     @media only screen and (min-width: 768px) {
       ${Width};
-      margin-left: 4%;
+      margin-left: 0%;
+      li {
+        margin-left: 5%;
+      }
     }
   }
   @media screen and (min-width: 768px) {
     font-size: 22px;
     padding: 0;
+  }
+`
+
+const BackButton = styled.a`
+  padding: 3% 4%;
+  margin: 5% 0;
+  cursor: pointer;
+  background-color: #d7d7d9;
+  color: #585858;
+  @media only screen and (min-width: 768px) {
+    padding: 1%;
+    margin: 3% 0;
   }
 `
 
@@ -150,6 +167,9 @@ const CaseStudyDetails = ({ caseStudy }) => {
           __html: caseStudy.childMarkdownRemark.html,
         }}
       />
+      <BackButton onClick={() => window.history.back()}>
+        Back to Project
+      </BackButton>
     </>
   )
 }
