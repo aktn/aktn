@@ -1,33 +1,34 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
-const ExternalLinks = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 50px 0;
-  justify-content: center;
-  align-items: center;
+const SocialLinks = styled.div`
+  flex: 1;
   a {
-    color: #232323;
-    padding: 15px 0px;
+    color: gray;
+    padding: 10px;
     cursor: pointer;
     z-index: 20;
     text-decoration: none;
+    text-align: center;
     &:hover {
-      color: gray;
+      color: cyan;
     }
-  }
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    a {
-      padding: 0px 25px;
+    &:first-child {
+      padding-left: 0px;
+    }
+    @media only screen and (min-width: 768px) {
+      padding: 0px 15px;
+      &:first-child {
+        padding: 10px;
+      }
     }
   }
 `
 
 const Social = () => {
   return (
-    <ExternalLinks>
+    <SocialLinks>
       <a
         href="https://linkedin.com/in/aung-khant-thet-naing-82303077/"
         target="_blank"
@@ -49,7 +50,7 @@ const Social = () => {
       >
         Twitter
       </a>
-    </ExternalLinks>
+    </SocialLinks>
   )
 }
 

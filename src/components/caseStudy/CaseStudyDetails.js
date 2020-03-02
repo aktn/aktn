@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { primaryTitleColor, primarySubTitleColor } from "./../theme/theme"
 
 const Width = props => `
 width: 100%;
@@ -21,8 +22,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
-
+  width: 100%;
   div {
     a {
       cursor: pointer;
@@ -35,16 +35,27 @@ const Content = styled.div`
     padding: 2% 5%;
     font-size: 35px;
     ${Width};
-    color: #212121;
+    color: ${primaryTitleColor};
     @media only screen and (min-width: 768px) {
       padding: 0;
+    }
+  }
+  div {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 100%;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 50%;
     }
   }
   h3 {
     font-size: 24px;
     padding: 0 5%;
     ${Width};
-    color: #212121;
+    color: ${primarySubTitleColor};
     line-height: 1.9;
     @media only screen and (min-width: 768px) {
       padding: 0;
@@ -64,10 +75,11 @@ const Content = styled.div`
     ${Width};
     display: flex;
     flex-flow: row wrap;
-    color: inherit;
+    color: ${primaryTitleColor};
     padding: 0 5%;
+    font-size: 18px;
     strong {
-      font-size: 20px;
+      font-size: 18px;
     }
     em {
       font-size: 18px;
@@ -105,7 +117,7 @@ const Content = styled.div`
       ${Width};
     }
     li {
-      color: inherit;
+      color: ${primaryTitleColor};
       margin-left: 5%;
       padding-bottom: 3%;
       padding-right: 6%;
@@ -115,13 +127,12 @@ const Content = styled.div`
     }
   }
   ol {
-    color: inherit;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     z-index: 15;
-
     li {
       margin-left: 8%;
       padding-bottom: 1%;
@@ -131,7 +142,7 @@ const Content = styled.div`
       cursor: pointer;
       z-index: 100;
       text-decoration: none;
-      color: inherit;
+      color: ${primaryTitleColor};
     }
     @media only screen and (min-width: 768px) {
       ${Width};
@@ -142,7 +153,7 @@ const Content = styled.div`
     }
   }
   @media screen and (min-width: 768px) {
-    font-size: 22px;
+    font-size: 18px;
     padding: 0;
   }
 `

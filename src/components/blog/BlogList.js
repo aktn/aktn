@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import Link from "gatsby-link"
+import { primaryFont, secondaryFont } from "./../theme/theme"
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: ${primaryFont};
   width: 100%;
   a,
   a:link,
@@ -30,7 +31,7 @@ const Description = styled.div`
   overflow: hidden;
   width: 100%;
   font-size: 16px;
-  color: #403b3b;
+  color: #757575;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -69,7 +70,7 @@ const ContentLayout = styled.div`
     width: 70%;
   }
   &:hover ${Card}:not(:hover) {
-    opacity: 0.3;
+    opacity: 0.1;
   }
 `
 
@@ -78,7 +79,7 @@ const Date = styled.p`
 `
 
 const Title = styled.h3`
-  color: #047a87;
+  color: #34fadc;
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 0.8px;
@@ -87,12 +88,14 @@ const Title = styled.h3`
 `
 
 const Heading = styled.h3`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding-bottom: 2rem;
   letter-spacing: 1.1px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  color: #fff;
+  font-family: ${secondaryFont};
   @media only screen and (min-width: 768px) {
     width: 100%;
   }
@@ -106,6 +109,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding-top: 5rem;
 `
 
 const BlogList = props => {

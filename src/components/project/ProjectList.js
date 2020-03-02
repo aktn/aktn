@@ -9,7 +9,7 @@ const Wrapper = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: 3rem 0 0;
+  margin: 5rem 0 0;
   padding: 0rem 1rem;
   @media screen and (min-width: 768px) {
     flex-flow: column;
@@ -32,28 +32,31 @@ const Project = styled.li`
   width: 100%;
   margin-bottom: 5rem;
   z-index: 20;
-  
+  animation-name: animateIn;
+  animation-duration: 500ms;
+  animation-delay: calc((${props => props.animateOrder}) * 120ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  @keyframes animateIn {
+    0% {
+      opacity: 0;
+      // transform: scale(0.6) translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   @media screen and (min-width: 768px) {
     margin-bottom: 0.6rem;
     flex: 0 0 50%;
     z-index: 20;
     width: 50%;
   }
-  @keyframes animateIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.6) translateY(-8px);
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
 
 const ProjectCover = styled.div`
   position: relative;
   background: none;
-
   .gatsby-image-wrapper {
     max-height: 300px;
     object-fit: contain;
@@ -67,9 +70,7 @@ const ProjectCover = styled.div`
     z-index: -10;
     display: none;
     opacity: 0;
-
     // visibility: hidden;
-
     div {
       object-fit: cover !important;
       height: auto;
@@ -118,8 +119,7 @@ const ProjectLink = styled(Link)`
   }
   &:hover h3 {
     @media screen and (min-width: 768px) {
-      text-decoration: line-through;
-      color: #007460;
+      color: #008c85;
     }
   }
   &:hover ${ProjectCover}::before {
@@ -140,15 +140,25 @@ const ProjectTitle = styled.span`
     z-index: -99;
     width: 100%;
   }
+  animation: fade-in 0.5s;
+  animation-delay: calc(var(--animation-order) * 100ms);
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 const Title = styled.h3`
   font-size: 3rem;
   font-family: LabGrotesqueMono;
   font-weight: 400;
-  color: #232323;
+  color: #545454;
   @media only screen and (min-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 3vw;
     text-align: left;
     display: inline-block;
     position: relative;
@@ -218,6 +228,7 @@ const ProjectList = props => {
                 alt={project.image.title}
                 title={project.image.title}
                 fluid={project.image.fluid}
+                color="#454545"
               />
               <ProjectDetails>
                 <Header>{project.title}</Header>

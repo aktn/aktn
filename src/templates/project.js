@@ -10,7 +10,7 @@ import ProjectVideo from "../components/project/ProjectVideo"
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: inherit;
 `
 
 const ProjectTemplate = ({ data, pageContext }) => {

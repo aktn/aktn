@@ -11,30 +11,31 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin-top: 200px;
-  margin-bottom: 0px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 100px;
+  padding-top: 150px;
+  margin-bottom: 50px;
+  @media only screen and (min-width: 768px) {
+    padding-top: 200px;
   }
 `
-const Name = styled.p`
-  font-size: 6em;
-  position: absolute;
-  top: 238px;
-  z-index: 2;
-  @media screen and (min-width: 768px) {
-    top: 231px;
-    font-size: 7em;
-    padding-right: 400px;
-  }
-`
+// const Name = styled.p`
+//   font-size: 6em;
+//   position: absolute;
+//   top: 158px;
+//   z-index: 2;
+//   color: #333333;
+//   @media screen and (min-width: 768px) {
+//     top: 151px;
+//     font-size: 7em;
+//     padding-right: 400px;
+//   }
+// `
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 5%;
+  margin: 0 5% 10%;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     min-width: 700px;
@@ -53,7 +54,7 @@ const About = styled.div`
   box-sizing: border-box;
   text-align: left;
   padding: 20px;
-  background-color: #3c7368;
+  background-color: #333333;
 `
 
 const ImgWrapper = styled.div`
@@ -71,6 +72,13 @@ const Picture = styled(Img)`
   object-fit: cover;
 `
 
+const SocialAccounts = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+
 const IndexPage = ({ data }) => {
   const { me, description } = data.contentfulAboutMe
 
@@ -81,7 +89,6 @@ const IndexPage = ({ data }) => {
           <title>Hello ;)</title>
         </Helmet>
         <Container>
-          <Name>Aung.</Name>
           <Wrapper>
             <ImgWrapper>
               <Picture fluid={me.fluid} alt={"me"} />
@@ -92,7 +99,9 @@ const IndexPage = ({ data }) => {
               }}
             />
           </Wrapper>
-          <Social></Social>
+          <SocialAccounts>
+            <Social></Social>
+          </SocialAccounts>
         </Container>
       </Layout>
     </>

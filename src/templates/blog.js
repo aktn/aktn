@@ -15,12 +15,13 @@ const Title = styled.h3`
   font-size: 3rem;
   padding: 0 0 2rem 0;
   width: 100vw;
-  padding: 0 5%;
+  padding: 15% 5% 0;
+  color: #d9d9d9;
   @media screen and (min-width: 768px) {
-    font-size: 5rem;
+    font-size: 3.5rem;
     width: 100%;
     max-width: 700px;
-    padding: 0;
+    padding: 3% 0 0;
   }
 `
 

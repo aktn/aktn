@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   display: block;
-  background-color: #fcfcfc;
+  background-color: inherit;
   margin: 7.5% 20% 0;
   padding: 5% 0 0;
   margin-right: auto;
@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  p {
+    color: #fff;
+  }
   video {
     padding: 2% 5%;
     background-color: #f2f2f2;

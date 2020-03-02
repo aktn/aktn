@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #fff;
+  background-color: inherit;
   font-family: "Noto Sans", sans-serif;
   margin: 1rem 0.5rem;
   @media screen and (min-width: 768px) {
@@ -22,9 +22,9 @@ const LeftColumn = styled.div`
 const Description = styled.div`
   font-size: 18px;
   letter-spacing: 1px;
-  color: #232323;
+  color: #adadad;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 2;
   border-right: 0px;
   font-weight: 400;
   @media screen and (min-width: 768px) {
@@ -56,7 +56,6 @@ const Links = styled.ul`
 const ExternalLink = styled.li`
   max-width: 250px;
   cursor: pointer;
-  border-bottom: 1px solid #232323;
   padding-bottom: 2px;
   transition: background-position 0.5s ease-in-out;
   a,
@@ -65,7 +64,7 @@ const ExternalLink = styled.li`
   a:focus,
   a:hover,
   a:active {
-    color: #232323;
+    color: #0dfff4;
     text-decoration: none;
   }
   z-index: 15;
@@ -76,7 +75,7 @@ const ExternalLink = styled.li`
 
 const Title = styled.h3`
   font-size: 60px;
-  color: #000;
+  color: #adadad;
   line-height: 60px;
 `
 

@@ -30,7 +30,6 @@ const Next = styled.span`
   a:focus,
   a:hover,
   a:active {
-    color: #232323;
     text-decoration: none;
   }
   @media screen and (min-width: 768px) {
@@ -50,7 +49,6 @@ const Previous = styled.span`
   a:focus,
   a:hover,
   a:active {
-    color: #232323;
     text-decoration: none;
   }
   @media screen and (min-width: 768px) {
@@ -64,14 +62,14 @@ const NavLinks = props => {
       {props.previous && (
         <Previous>
           <Link to={`projects/${props.previous.slug}/`}>
-            <LeftArrow width="25" height="25" />
+            <LeftArrow stroke="grey" width="25" height="25" />
           </Link>
         </Previous>
       )}
       {props.next && (
         <Next>
           <Link to={`projects/${props.next.slug}/`}>
-            <RightArrow width="25" height="25" />
+            <RightArrow stroke="grey" width="25" height="25" />
           </Link>
         </Next>
       )}
